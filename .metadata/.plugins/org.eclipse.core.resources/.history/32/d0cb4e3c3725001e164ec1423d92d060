@@ -1,0 +1,42 @@
+// 이벤트 소스에 이벤트 리스너 등록
+
+document.querySelector('#id').addEventListener('input',  event => {
+  let inputId = event.target.value;
+  idCheck(inputId);
+  // memberRegister();
+});
+
+function idCheck(inputId){
+  const url = `/ajax/member/idcheck?id=${inputId}`;
+  const options = {
+    method : 'post' , 
+    headers : {
+      "Content-Type" : "application/x-www-form-urlencoded"
+    } ,
+    // json 형식의 객체인 member 를 문자열로 변환
+    body : JSON.stringify(member)
+    
+  }
+  fetch(url , options)
+  .then(response => response.json())
+  .then(result => {
+	  showResult(result);
+	 // console.dir(result);
+  });
+  // .catch(error => alert(error));
+  
+}
+
+function showResult(result){
+	// alert(message);
+ const view = document.querySelector("#result");
+  if (view) {
+	  if(result.result){
+		  view.innerHTML = result.message;
+	  } else{
+		 view.innerHTML = "회원 등록이 실패하였습니다..";
+	  }
+    
+  }
+ 
+}

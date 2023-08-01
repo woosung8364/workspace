@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* 로그인페이지 반응형 */
+@media screen and (max-width:1100px) {
+
+ /* input 태그들 감싸는 form 태그 */
+ .uid_form{
+  width:100%;
+ }
+
+ /* 아이디 저장 텍스트 */
+ .save_text{
+  font-size:16px;
+ }
+
+ /* 휴대폰 카카오 네이버 기타 */
+ .platform_login{
+  width:100%;
+ }
+
+ .find_account a{
+  font-size:24px;
+ }
+
+ /* 회원가입 버튼 크기지정 */
+ .regist_account{
+  width:100%;
+ }
+
+
+}
+
+@media screen and (max-width:600px) {
+
+  body{
+    min-width: 400px;
+  }
+
+  /* 로그인 전체영역 지정 */
+  .login_contents{
+    width:90%;
+  }
+
+  h1.logo a img{
+    width:200px;
+  }
+
+
+
+
+}

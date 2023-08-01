@@ -1,0 +1,154 @@
+
+/* 좌측 메뉴창 텍스트 칼러 색설정 */
+.mob_nav p , span , a , div{
+    color:#414141;
+}
+
+
+
+/* 헤더 밑 mypage 전체영역을 감싸는 div */
+.mypage_wrap{
+    position:relative;
+    top:8%;
+    width:100%;
+    height:67%;
+    /* background-color: #e2e2e2; */
+}
+
+.mypage_header{
+    border-bottom: 1px solid #dadada;
+    height:8%;
+}
+
+/* 좌측 네비게이션 전체영역 */
+.mypage_left_wrap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:20%;
+    height:100%;
+    background-color: rgb(238, 249, 254);
+    border-right: 1px solid #dadada;
+}
+
+/* 좌측 네비게이션 텍스트영역 */
+.mypage_left_text{
+    position:relative;
+    width:70%;
+    height:100%;
+    margin:0 auto;
+    /* background-color: aqua; */
+    top:0;
+   
+}
+
+.mypage_left_text li{
+    line-height:100px;
+}
+
+.mypage_left_text li:first-child{
+    margin-top:30px;
+}
+
+
+.mypage_left_text li a{
+    font-size:20px;
+}
+
+.mypage_left_text li a:hover{
+    color:#1e92ff;
+}
+
+/* 우측 mypage content 전체영역 */
+.mypage_right_wrap{
+    position:absolute;
+    width:80%;
+    height:100%;
+    right:0;
+    /* background-color: rgb(218, 207, 192); */
+    
+}
+
+
+/*  메인타이틀 : mypage  */
+#mypage_title{
+    font-size:60px;
+    font-weight: bold;
+    width:100%;
+    text-align: center;
+    position:relative;
+    top:5%;
+}
+
+#mypage_customer_name{
+    font-size:32px;
+    font-weight: bold;
+    width:100%;
+    text-align: center;
+    position:relative;
+    top:10%;
+    top:10%;
+}
+
+.mypage_info_table{
+    margin:0 auto;
+    width:90%;
+    position:relative;
+    top:17%;
+    height:600px;
+    /* background-color: aquamarine; */
+}
+
+/* 최근주문정보 */
+.mypage_info_table h1{
+    position:absolute;
+    left:10%;
+    top:0;
+}
+
+.mypage_info_table h1 span{
+    margin-left:50px;
+}
+
+/* 테이블 전체영역 */
+.mypage_right_wrap table{
+    position:relative;
+    margin:0 auto;
+    top:8%;
+    width:80%;
+    
+}
+
+/* 테이블 헤더 스타일설정 */
+.mypage_right_wrap thead td{
+    height:50px;
+    background-color: #f9fdff;
+    font-family: 'Nanum Myeongjo', serif;
+    border:1px solid #000000;
+    text-align:center;
+    font-size:25px;
+    font-weight: bold;
+}
+
+
+.mypage_right_wrap thead td:hover{
+    background-color: rgb(235, 253, 255);
+}
+
+
+/* 테이블 바디 - 행 컨텐츠 설정 */
+.mypage_right_wrap tbody td{
+    height:60px;
+    background-color: #ffffff;
+    font-family: 'Noto Sans', sans-serif;
+    border:1px solid #000000;
+    text-align:center;
+    font-size:25px;
+    font-weight: bold;
+}
+
+.mypage_right_wrap tbody td:hover{
+   background-color: rgb(188, 216, 255);
+}
+
+

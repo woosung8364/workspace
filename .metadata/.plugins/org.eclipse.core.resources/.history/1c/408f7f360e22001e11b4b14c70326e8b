@@ -1,0 +1,15 @@
+package ezen.mvcframework.web.member.controller;
+
+import java.util.Map;
+
+/**
+ * 세부 컨트롤러 명세(역할)
+ * @author 김기정
+ * 11111111111
+ */
+public interface ControllerV4 {
+//	리턴타입 스트링으로 바뀜 , (매개변수 map model 하나 더 들어옴)
+	public String process(Map<String, String> paramMap, Map<String, Object> model);
+}
+
+

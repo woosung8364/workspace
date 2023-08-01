@@ -1,0 +1,142 @@
+/* 구글폰트 링크 */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+/* 게시판 전체영역 */
+.article_wrap{
+    width:90%;
+    position: relative;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin:0 auto;
+    top:180px;
+}
+
+/* 자주 묻는 메뉴 : 메인텍스트 */
+.article_main_text{
+    width:100%;
+    text-align: center;
+    font-size:60px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: bold;
+}
+
+/* 상단 메뉴 */
+.article_menu{
+    margin:50px 0;
+    width:40%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.article_menu li , .article_menu_list4 a{
+  font-family: 'Nanum Myeongjo', serif;
+  font-size:24px;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+
+.article_menu_list1:hover , .article_menu_list2 a:hover{
+   color:#5c95f0;
+  }
+
+/* 테이블 제목들 */
+.article_table thead td{
+    border-top:1px solid #dadada;
+    border-bottom:1px solid #dadada;
+    height:50px;
+    text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size:20px;
+    font-weight: bold;
+}
+
+/* 테이블 제목위 border */
+.article_table thead tr{
+    border-top:3px solid #dadada;
+}
+
+/* 테이블 내용들 */
+.article_table tbody td{
+    border-bottom:1px solid #dadada;
+    height:50px;
+    text-align: center;
+    font-size:15px;
+    font-weight: bold;
+    font-family: 'NotoSans', sans-serif;
+    color:#000000c2;
+   
+}
+
+/* 테이블 맨밑 바닥 border */
+.article_table tbody tr:last-child{
+    border-bottom: 3px solid #dadada;
+} 
+
+
+/* 페이지 선택 버튼 */
+.article_page_list{
+    margin-top:80px;
+    position:relative;
+    top:70px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    /* border:1px solid #000; */
+
+    
+}
+
+.article_page_list.my{
+	top:-8px;
+}
+
+.article_page_list li{
+   border-radius:5px;
+   padding:5px 10px;
+   margin-right:20px;
+   background-color: #dadada;
+   cursor:pointer;
+}
+
+ .article_page_list li a:hover{
+    color:#5c95f0;
+ }
+
+ .article_page_list li.Act a{
+    color:#361ebe;
+ }
+
+/* 글쓰기 버튼 */
+ .article_page_write_bt{
+    width:80px;
+    height: 30px;
+    background-color: #5c95f0;
+    border-radius: 5px;
+    position:absolute;
+    right:0;
+    bottom:27%;
+    align-items: center;
+    padding:0 20px;
+ }
+
+
+ .article_page_write_bt a{
+   width:100%;
+   height:100%;
+   display:block;
+   position:absolute;
+   top:0;
+   left:0;
+   font-weight: bold;
+   font-size:18px;
+   line-height: 30px;
+   color:#fff;
+ }

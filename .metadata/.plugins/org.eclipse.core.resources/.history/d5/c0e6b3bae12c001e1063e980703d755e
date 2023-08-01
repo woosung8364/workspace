@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/* 이 스타일시트는 장바구니의 반응형 웹을 구성하기 위한 시트입니다 */
+@media screen and (max-width:1220px) {
+  
+
+  /* 컨텐츠 전체영역 */
+  .shopping_page{
+    width:85%;
+    height:1000px;
+  }
+
+  /* 전체선택 버튼  */
+  .shop_select_all_bt{
+    margin-top:0;
+  }
+
+
+  .shopping_bag_product_price_wrap{
+  width:99%;
+  }
+
+  /* img 영역 배치 수정 */
+  .shopping_bag_product_img{
+    flex-direction: column-reverse;
+    width:70%;
+  }
+
+  /* 이미지 선택 버튼 */
+  .shopping_bag_product_img .shop_select_all_bt{
+    margin-top:10px;
+  }
+
+  .shopping_bag_product_text{
+    width:1000px;
+  }
+
+  .shopping_bag_product_count button{
+    width:30%;
+    font-size:18px;
+  }
+
+}
+
+
+@media screen and (max-width:760px) {
+  
+/* 컨텐츠 전체영역 */
+  .shopping_page{
+    width:95%;
+  }
+ 
+
+  /* 이미지 선택 버튼 */
+  .shop_select_all_bt{
+    margin-top:10px;
+  }
+
+  .shopping_bag_product_text{
+    width:1000px;
+  }
+
+  .shopping_bag_product_count button{
+    width:30%;
+    font-size:13px;
+  }
+
+}

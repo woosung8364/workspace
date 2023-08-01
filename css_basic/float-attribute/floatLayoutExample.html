@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float-layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #fff3e0;
+    }
+
+    #wrap {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    #header {
+      width: 100%;
+      height: 100px;
+      background-color: #ffe0B2;
+    }
+
+    #nav {
+      width: 100%;
+      height: 100px;
+      background-color: #ffcc80;
+    }
+
+    #aside {
+      width: 30%;
+      height: 780px;
+      background-color: #ffb74d;
+      float: left;
+    }
+
+    #section {
+      width: 70%;
+      height: 780px;
+      background-color: #ffa726;
+      float: left;
+    }
+
+    #footer {
+      width: 100%;
+      height: 100px;
+      background-color: #ff9800;
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- float 기반 페이지 레이아웃 -->
+  <!-- 5개의 박스로 구성-->
+  <!-- 너비를 일반 pc 1920px 기준 -->
+  <!-- wrap은 1200px 기준, 포함된 div들은 %로 설정 -->
+  <!--반응형 레이아웃으로 가기 위해 px을 %로 변경  -->
+  <div id="wrap">
+    <div id="header">HEADER</div>
+    <div id="nav">NAV</div>
+    <div id="aside">ASIDE</div>
+    <div id="section">SECTION</div>
+    <div id="footer">FOOTER</div>
+  </div>
+</body>
+
+</html>

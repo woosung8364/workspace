@@ -1,0 +1,100 @@
+package ezen.fileupload;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+/**
+ * 파일 업로드 서블릿
+ */
+@WebServlet("/upload")
+@MultipartConfig(
+		fileSizeThreshold = 1024 * 1024 * 1, 
+		maxFileSize = 1024 * 1024 * 10, 
+		maxRequestSize = 1024 * 1024 * 15, 
+		location = "C:/ezen-fullstack"
+)
+public class FileUploadServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	private String uploadPath = "C:/ezen-fullstack/fileStorage/";
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		String uploader = request.getParameter("uploader");
+		System.out.println(uploader);
+		
+		// 단일 업로드 파일인 경우...
+		Part part = request.getPart("upfile");
+		
+		File file = new File(uploadPath);
+		if (!file.exists()) {
+			file.mkdirs();
+		}
+		String fileName = part.getSubmittedFileName();
+//		getPartConfig(part);
+		System.out.println("업로드 파일명 : " + fileName);
+
+		// 파일 저장
+		part.write(uploadPath + fileName);
+	}
+
+	/**
+	 * 업로드 파일 정보 출력
+	 */
+	private void getPartConfig(Part part) {
+		System.out.println("------------------------------------------------------------");
+		System.out.println(" LOG :: [HTML태그의 폼태그 이름] :: " + part.getName());
+		System.out.println(" LOG :: [ 파일 사이즈 ] :: " + part.getSize());
+		for (String name : part.getHeaderNames()) {
+			System.out.println(" LOG :: HeaderName :: " + name + ", HeaderValue :: " + part.getHeader(name) + "\n");
+		}
+		System.out.println("------------------------------------------------------------");
+	}
+
+	/**
+	 * 업로드 파일에서 파일명 추출
+	 */
+	private String getFileName(Part part) {
+		String contentDisp = part.getHeader("content-disposition");
+		System.out.println(" LOG :: content-disposition 헤더 :: = " + contentDisp);
+		String[] tokens = contentDisp.split(";");
+		for (String token : tokens) {
+			if (token.trim().startsWith("filename")) {
+				System.out.println(" LOG :: 파일 이름 :: " + token);
+				return token.substring(token.indexOf("=") + 2, token.length() - 1);
+			}
+		}
+		return "";
+	}
+
+}
+
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		request.setCharacterEncoding("utf-8");
+//	    String writer = request.getParameter("uploader");
+//	    String file = request.getParameter("upfile");
+//	    System.out.println("업로더 : " + writer);
+//	    System.out.println("파일 : " + file);
+//	    
+//	    // 서블릿 API를 이용하여 업로드 파일 데이터 읽기
+//	    InputStream in = request.getInputStream();
+//	    byte[] buffer = new byte[1024];
+//	    int count = 0;
+//	    while((count=in.read(buffer)) != -1){
+//	        // 임시 문자열 디코딩
+//	    	String data = new String(buffer, 0, count);
+//	        System.out.println(data);
+//	    }
+//	    in.close();
+//	}
+//	

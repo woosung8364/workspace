@@ -1,0 +1,23 @@
+<%@page import="java.util.List"%>
+<%@page import="ezen.mvcframework.domain.common.database.DaoFactory"%>
+<%@page import="ezen.mvcframework.domain.member.dao.MemberDao"%>
+<%@page import="com.fasterxml.jackson.databind.ObjectMapper"%>
+<%@page import="ezen.mvcframework.domain.member.dto.Member"%>
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="java.io.BufferedReader"%>
+<%@ page contentType="text/plain; charset=utf-8" %>
+<%
+	
+  MemberDao memberDao = DaoFactory.getInstance().getMemberDao();
+  List<Member> list = memberDao.findByAll();
+  
+  
+  ObjectMapper objectMapper = new ObjectMapper();
+  Member member = objectMapper.readValue(request.getInputStream(), Member.class);
+  System.out.println(member);
+  //DB 인서트 완료 가정
+  
+  //가입 완료 후 응답 메시지 전송
+  String result = "{\"result\": true ,  \"message\":\"회원 가입 정상 처리\" }";
+  out.println(result);
+%>

@@ -1,0 +1,15 @@
+package ezen.jdbc;
+
+/**
+ * JDBC API를 이용한 RDBMS (ORACLE) 연동
+ * @author i7C- 송우성
+ *
+ */
+public class JDBCExample {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script defer src="/js/member-register.js"></script>
+</head>
+<body>
+
+	<button> 회원가입 </button>
+	<p id="message"></p>
+</body>
+</html> 

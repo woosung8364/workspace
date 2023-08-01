@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>구구단</title>
+</head>
+<body>
+ <form action="">
+ <label for="dan">입력단</label>
+ <input type="number" name ="dan" id="dan">
+ </form>
+</body>
+</html>

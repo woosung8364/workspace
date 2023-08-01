@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+/* 내정보 : 마이페이지 반응형 css */
+/* 전체 가로 길이가 1000 부터 컨텐츠조정 */
+@media screen and (max-width:1000px){
+
+  /* 테이블 전체 크기 사이즈 조정 */
+  .mypage_info_table{
+    width:100%;
+  }
+ 
+  /* 테이블 제목 사이즈 조정 */
+  .mypage_right_wrap thead td{
+    font-size:15px;
+  }
+
+   /* 테이블 내용 사이즈 조정 */
+  .mypage_right_wrap tbody td{
+    font-size:15px;
+  }
+
+  /* footer img 전체영역 ul width값 지정 */
+  .mypage_footer .footer_mark {
+    width: 50%;
+  }
+
+  .mypage_footer .footer_item {
+    display: block;
+    font-size: 16px;
+  }
+
+  .mypage_footer .wa img {
+    margin-right: 50px;
+  }
+
+}
+
+
+
+/* 전체 가로 길이가 800 부터 컨텐츠조정 */
+@media screen and (max-width:800px){
+
+  body{
+    min-width: 500px;
+  }
+
+  /* 좌측의 메뉴창이 상단 헤더 밑으로 붙음 */
+  .mypage_left_wrap{
+    width:100%;
+    height:70px;
+    border-bottom:1px solid #dadada;
+  }
+
+  /* 개인정보 , 장바구니 , 주문현황 , 나의게시글 , 1:1문의 */
+  .mypage_left_text{
+    flex-direction: row;
+
+  }
+
+  /* 우측컨텐츠들이 중앙으로 정렬됨 */
+  .mypage_right_wrap{
+    width:100%;
+  }
+
+  /* 최근주문정보 */
+  .mypage_info_table h1{
+    left:0;
+  }
+
+  /* ooo회원님의 페이지 입니다 */
+  #mypage_customer_name{
+    font-size:28px;
+  }
+
+    /* 테이블의 크기 조정 */
+  .mypage_right_wrap table{
+    width:100%;
+  }
+
+  /* 테이블 제목 폰트사이즈 */
+  .mypage_right_wrap thead td{
+    font-size:20px;
+  }
+
+  /* 테이블 내용 폰트사이즈 */
+  .mypage_right_wrap tbody td{
+    font-size:20px;
+  }
+
+  .mypage_footer .footer_mark{
+    margin-top:0;
+  }
+
+}

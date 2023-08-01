@@ -1,0 +1,5 @@
+package ezen.listener;
+
+public class UserAccessLoggingListener {
+
+}

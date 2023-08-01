@@ -1,0 +1,24 @@
+package ezen.portfolio.web.member.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import ezen.portfolio.common.dao.DaoFactory;
+import ezen.portfolio.member.dao.MemberDao;
+import ezen.portfolio.member.dto.Member;
+
+
+
+public class articleHandler implements ControllerV3{
+
+	@Override
+	public ModelAndView process(Map<String, String> paramMap) {
+		String viewName = "/article/articles";
+		MemberDao memberDao =DaoFactory.getInstance().getMemberDao();
+		List<Member> members =memberDao.findByAll();
+		ModelAndView mav = new ModelAndView(viewName);
+		mav.getModel().put("members", members);
+		return mav;
+	}
+
+}

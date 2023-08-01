@@ -1,0 +1,7 @@
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="java.io.BufferedReader"%>
+<%@ page contentType="text/plain; charset=utf-8" %>
+<%
+  BufferedReader in = new BufferedReader(new InputStreamReader(request.getInputStream() , "utf-8"));
+%>
+<%= name %>님 반갑습니다

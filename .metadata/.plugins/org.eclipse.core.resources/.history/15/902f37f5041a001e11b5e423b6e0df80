@@ -1,0 +1,38 @@
+package ezen.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * 싱글톤 객체 
+ * 디폴트 생성자 , 객체 한개
+ */
+public class LifeCycleServlet2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	private int count; 
+       
+//	생성자
+    public LifeCycleServlet2() {
+    	System.out.println("서블릿 컨테이너에 의해 생성자 호출됨");
+        super();
+        
+    }
+
+	public void init(ServletConfig config) throws ServletException {
+		count=0;
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스 박스 레이아웃</title>
+  <style>
+    .container {
+      width: 500px;
+      height: 300px;
+      background-color: #c4c4c4;
+      border: 1px solid black;
+      display: flex;
+      flex-wrap:nowrap;
+      justify-content:right;
+    }
+
+    .item {
+      color: white;
+      background-color: #ff5252;
+    }
+
+    .item:nth-child(2n) {
+      background-color: #5e2d2d;
+    }
+
+  
+  </style>
+
+<body>
+  <div class="container">
+    <div class="item">아이템 - 1</div>
+    <div class="item">아이템 - 2</div>
+    <div class="item">아이템 - 3</div>
+    <div class="item">아이템 - 4</div>
+  
+  </div>
+</body>
+
+</html>

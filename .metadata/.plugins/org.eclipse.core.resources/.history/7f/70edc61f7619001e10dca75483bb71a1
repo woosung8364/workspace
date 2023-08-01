@@ -1,0 +1,72 @@
+package ezen.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * 구구단  동적 생성서브릿
+ */
+@WebServlet("/gugudan")
+public class GugudanServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/*
+	 * 웹 브라우저의 GET 요청에 따른 처리
+	 * get 방식일때만 요청에 응함
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		process(request,response);
+	}
+	
+	
+	@Override
+	private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		브라우저 전송 파라메터 수신
+		String dan = request.getParameter("dan");
+		if(dan == null) {
+			dan = "9";
+		}
+		
+//		구구단을 input 에 입력한 값을 읽어들여 동적으로 생성하기 위한 변수선언
+//		input 값은 request 에 저장되어있다
+//		request의 getParameter 메소드를 통하여 입력한값 전달받기 (문자열로 전달됨)
+//		문자열을 다시 숫자로 전달받기위해 숫자로 형변환 메소드인 parseInt 사용
+		int numberDan = Integer.parseInt(dan);
+		
+		
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String name = "김기정";
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<title>동적 구구단</title>");
+		out.println("</head>");
+		out.println("<body>");
+		out.println("<table border='1' width='80%'>");
+		for (int i = 2; i <= numberDan; i++) {
+			out.println("<tr>");
+			for (int j = 1; j <= 9; j++) {
+				out.println("<td>"+i+"*"+j+ "=" +(i*j)+"</td>");
+			}
+			out.println("</tr>");
+		
+		}
+		out.println("</table>");
+		out.println("</body>");
+		out.println("</html>");
+	}
+
+}

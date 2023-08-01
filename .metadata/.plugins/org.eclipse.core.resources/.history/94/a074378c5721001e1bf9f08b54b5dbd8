@@ -1,0 +1,42 @@
+package ezen.listener;
+
+import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSessionAttributeListener;
+import javax.servlet.http.HttpSessionBindingEvent;
+
+import ezen.mvcproject.domain.member.dto.Member;
+
+/**
+ * Application Lifecycle Listener implementation class UserAccessLoggingListener
+ *
+ */
+@WebListener
+public class UserAccessLoggingListener implements HttpSessionAttributeListener {
+
+
+	/**
+     * @see HttpSessionAttributeListener#attributeAdded(HttpSessionBindingEvent)
+     */
+    public void attributeAdded(HttpSessionBindingEvent se)  { 
+    	if (se.getName().equalsIgnoreCase("loginMember")) {
+    		Member user = (Member) se.getValue();
+    		System.out.println(member.getName() + "님이 로그인하셨습니다.");
+//    		추후 파일 로그로 변경할 것임...
+    		}
+    }
+
+	/**
+     * @see HttpSessionAttributeListener#attributeRemoved(HttpSessionBindingEvent)
+     */
+    public void attributeRemoved(HttpSessionBindingEvent se)  { 
+         // TODO Auto-generated method stub
+    }
+
+	/**
+     * @see HttpSessionAttributeListener#attributeReplaced(HttpSessionBindingEvent)
+     */
+    public void attributeReplaced(HttpSessionBindingEvent se)  { 
+         // TODO Auto-generated method stub
+    }
+	
+}

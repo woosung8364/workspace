@@ -1,0 +1,333 @@
+/* 쇼핑차트 css 스타일시트 적용을 위한 파일입니다 */
+
+/* header 로고 */
+
+li , a , p , div , span , button {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+#shopping_header {
+  top: 0;
+  border-bottom: 1px solid #00000023;
+}
+
+
+/* 검색버튼 누르고나서 검색버튼을 닫는 x버튼 */
+#shopping_header .sch_close img {
+  -webkit-filter: grayscale(100%) brightness(0);
+  filter: grayscale(100%) brightness(0);
+}
+
+
+/* 검색 텍스트칸 */
+#shopping_header .search_container .text {
+  border: 1px solid #000;
+  z-index: 99;
+}
+
+
+
+/* 쇼핑컨텐츠 */
+/* 영역지정 */
+.shopping_page {
+  width: 80%;
+  height: 800px;
+  margin: 150px auto 0 auto;
+  text-align: center;
+  /* background-color: antiquewhite; */
+  position: relative;
+}
+
+.shop_text{
+  margin-bottom:50px;
+}
+
+.shop_text h2 {
+  
+  font-size: 36px;
+  color: #000;
+}
+
+/* 전체선택 */
+.shop_select {
+  padding-bottom:20px;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #00000033;
+}
+
+/* 전체선택 버튼 */
+.shop_select_all_bt {
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background-color: darkgreen;
+  background-image: url(../img/shopping_check_off.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+  
+}
+
+
+.shop_select_all_bt.On{
+  background-image:url(../img/shopping_check_off.png);
+}
+/* .hr1{
+  position:absolute;
+  top:30%;
+  width:100%;
+  height:2px;
+  background-color:#00000033;
+} */
+
+
+/* 상품디테일 */
+
+.shop_product_detail {
+  border-bottom: 1px solid #00000033;
+  width: 100%;
+  position: relative;
+  margin-top:20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding:20px;
+  padding-top:0;
+}
+
+
+/* 장바구니에서 제거:: x버튼 */
+.shopping_bag_close{
+  width:20px;
+  height:20px;
+  display:block;
+  position:absolute;
+  right:1%;
+  top:1%;
+  /* jsp로 변환시 경로확인 필요!!! */
+  background-image: url(../img/bu_x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+    -webkit-filter: grayscale(100%) brightness(0);
+  filter: grayscale(100%) brightness(0);
+}
+
+
+/* 상품선택 bt */
+
+.shop_product_detail .shop_select_all_bt {
+  width:20px;
+  height:20px;
+}
+
+/* 상품 이미지 전체영역 */
+.shopping_bag_product_img{
+  display:flex;
+  align-items: center;
+
+}
+
+/* 제품이미지 */
+.shop_product_detail img{
+  width:150px;
+  height:150px;
+}
+
+/* 제품 설명 텍스트 */
+.shopping_bag_product_text{
+  display:flex;
+  text-align: left;
+  margin-left:50px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.shopping_bag_product_text span{
+  font-size:15px;
+}
+
+/* 제품명 */
+.shopping_bag_product_name{
+  font-size:20px;
+  color:#000;
+  font-weight: bold;
+}
+
+/* 제품수량부분 영역지정 */
+.shopping_bag_product_count{
+  margin-top:10px;
+  width:100%;
+}
+
+/* 제품수량 choice */
+#shopping_bag_product_select_count{
+  margin-left:10px;
+  width:50px;
+  height:30px;
+  border:1px solid #000;
+}
+
+/* 하단 버튼 영역지정 */
+.shopping_bag_product_bt{
+  margin-top:15px;
+  width:100%;
+}
+
+/* 버튼 사이즈 지정 */
+.shopping_bag_product_count button{
+  display:inline-block;
+  width:300px;
+  height:30px;
+  border-radius: 5px;
+  font-size:20px;
+  font-weight: bold;
+}
+
+
+/* 옵션 / 수량변경 버튼 */
+.shopping_bag_product_change_count{
+  background-color:#cad5ff;
+  margin-right:20px;
+}
+
+.shopping_bag_product_change_count:hover{
+  background-color:#a0b2fc;
+}
+
+/* 바로 구매 버튼 */
+.shopping_bag_product_buy_now{
+  background-color:#7c98f9;
+}
+
+.shopping_bag_product_buy_now:hover{
+  background-color:#5c7ffc;
+}
+
+.shopping_bag_product_price{
+  position:fixed;
+  width:100%;
+  height: 80px;
+  background-color:#b4c2f8;
+  z-index:10;
+  bottom:0;
+  right:0;
+}
+
+.shopping_bag_product_price_wrap{
+  position: relative;
+  width:80%;
+  height: 100%;
+  margin:0 auto;
+  /* background-color: #0033ff; */
+}
+
+.shopping_bag_product_price_contents{
+  position:absolute;
+  width:500px;
+  height:80px;
+  line-height: 80px;
+  right:8%;
+  display:inline-block;
+}
+
+.shopping_bag_product_price_text{
+  color:white;
+  font-size:30px;
+  font-weight: bold;
+  display:inline-block;
+}
+
+
+
+/* 화살표 버튼을 눌렀을떄 나오는 주문금액 상세내역 화면 */
+/* On 클래스가 붙을시 화면이 나타남 */
+
+.ppti_clicked{
+  display:none;
+  width:450px;
+  height:400px;
+  position:absolute;
+  border-radius:15px;
+  top:-420px;
+  left:18%;
+  background-color: #ffffff;
+  border:1px solid #b4c2f8;
+  box-shadow: 2px 2px 15px #767676;
+  transition:1s all;
+  padding:10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border:none;
+}
+
+.ppti_clicked.On{
+  display:flex;
+}
+
+.ppti_clicked .ppti_price{
+  font-size:24px;
+  font-weight: bold;
+}
+
+.ppti_clicked p{
+  font-size:24px;
+  font-weight: 200;
+  line-height: 50px;
+}
+
+
+/* ppti의 회색 중앙 영역 */
+.ppti_price_math{
+  width:80%;
+  background-color: #dadada;
+  padding:20px;
+  border-radius: 10px;
+}
+
+
+/* 할인 */
+.discount{
+  color:#ff0000;
+}
+
+/* 총 주문 금액 */
+.total_price{
+  margin-top:20px;
+  border-top:1px solid #dadada;
+  width:80%;
+  display:flex;
+  text-align: justify;
+  position:relative;
+  font-size:18px;
+}
+
+.total_price h1:first-child{
+  position:absolute;
+  left:0;
+}
+
+.total_price h1:last-child{
+  position:absolute;
+  right:0;
+}
+
+
+
+/* 주문하기 버튼 */
+.shopping_bag_product_order_bt{
+  position:absolute;
+  background-color:white;
+  width:250px;
+  height:50px;
+  right:0;
+  top:calc(50% - (50px / 2));
+  border-radius: 5px;
+  font-weight: bold;
+  font-size:25px;
+  padding:0;
+}

@@ -1,0 +1,18 @@
+package ezen.jdbc;
+
+import java.net.Socket;
+
+/**
+ * JDBC API를 이용한 RDBMS (ORACLE) 연동
+ * @author i7C- 송우성
+ *
+ */
+public class JDBCExample {
+
+	public static void main(String[] args) {
+		Socket socket = new Socket("localhost", 1521);
+		System.out.println("오라클 서버와 연결되었습니다");
+
+	}
+
+}

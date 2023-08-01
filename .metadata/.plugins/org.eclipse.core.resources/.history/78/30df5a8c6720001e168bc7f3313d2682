@@ -1,0 +1,118 @@
+$(document).ready(function () {
+  // 2.섹션 함수를 인지할수 있게 하는 변수
+  let w01 = 0;
+  
+
+
+  // 3.각 섹션의 높이값을 구해줄 변수 생성
+
+  let sec1Top = $('#wrap01').offset().top;
+  
+
+
+  //6. scroll event
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > sec1Top - 300) {
+      if (w01 == 0) {
+        wrap01();
+      }
+      else {
+        r_Btn01();
+      }
+    }
+  });
+
+  // 1.section 함수 시작
+  //4. w0변수를 각 함수에 넣어준다. 한번만 실행하기위해
+  function wrap01() {
+    w01 = 1;
+    // h1
+    $('#song').animate({ 'margin-left': '50px' , 'opacity' : '0' }, 0);
+    $('#song').delay(500).animate({ 'margin-left': '0' , 'opacity' : '1'}, 1000);
+
+    $('.sec_text h5').animate({ 'margin-right': '50px' , 'opacity' : '0' }, 0);
+    $('.sec_text h5').delay(500).animate({ 'margin-right': '0' , 'opacity' : '1'}, 1000);
+
+    $('.sec_text img').animate({'opacity' : '0' }, 0);
+    $('.sec_text img').delay(1000).animate({'opacity' : '1'}, 1000);
+
+
+
+    $('#log_in').click(function(){
+      let submenu = $('.log_in_box');
+ 
+      // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+      if( submenu.is(":visible") ){
+          submenu.slideUp();
+      }else{
+          submenu.slideDown();
+      }
+
+    });
+
+    $('.menu_img').click(function(){
+
+      $('.contents_box').fadeOut(1000);
+      let menu = $('#menu_box');
+      menu.slideDown();
+    });
+
+    $('#exit').click(function(){
+
+      $('.contents_box').fadeIn(1000);
+      let menu = $('#menu_box');
+      menu.slideUp();
+    });
+  }
+
+
+ 
+
+
+  //5.right_btn 불이켜진 함수 만들기
+
+  function r_Btn01() {
+    $('#right_btn li a').css('background-position', 'left top');
+
+    $('#right_btn li:nth-child(1) a').css('background-position', 'left bottom');
+
+  }
+  
+
+  wrap01();
+
+
+  const circle = document.querySelector(".circle");
+
+  document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
+
+      // 마우스의 좌표는 clientX와 clientY를 이용해 알수 있다. -> 브라우저 window의 좌표값 위치를 전달한다.
+
+      // pageX, pageY와는 다름.
+
+      const mouseX = e.clientX;
+
+      const mouseY = e.clientY;
+
+      circle.style.left = mouseX + 'px';
+
+      circle.style.top = mouseY + 'px';
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+)

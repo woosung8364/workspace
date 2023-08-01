@@ -1,0 +1,14 @@
+//  Fetch API 를 이용한 비동기 통신
+// 이벤트 소스에 이벤트 리스너 등록
+const buton = document.querySelector('button');
+buton.addEventListener('click', event => {
+
+
+  fetch('/books.jsp')
+    .then(response => response.json())
+    .then(object => {
+      console.dir(object);
+    })
+});
+
+

@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+
+/* 이 스타일시트는 구매하기: 결제정보창을 반응형 웹으로
+구성하기 위한 파일입니다 */
+@media screen and (max-width:1000px) {
+
+
+  /* 헤더 로고 이미지 고정을 위한 고정값 부여 */
+  .order_header .header_wrap{
+    height:70px;
+  }
+
+  /* 콘텐츠 전체 영역 사이즈 지정 */
+  .order_wrap {
+    width: 80%;
+  }
+
+  /* 결제 수단 버튼 크기조정 */
+  .order_check input {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* 결제 수단 텍스트 크기조정 */
+  .order_check p {
+    font-size: 20px;
+  }
+
+  .order_way_type {
+    justify-content: space-evenly;
+  }
+
+  /* 종류창 카드번호 할부여부  */
+  .order_way_type h2 {
+    font-size: 25px;
+  }
+
+  /* 회색 박스 결제정보창 select */
+  .order_way_type select {
+    height: 30px;
+  }
+
+  /* 회색 박스 결제정보창 input */
+  .order_way_type input {
+    height: 30px;
+  }
+
+  /*  */
+  .order_all_price h1{
+    font-size:25px;
+  }
+}
+
+@media screen and (max-width:700px) {
+
+  /* 콘텐츠 전체 영역 사이즈 지정 */
+  .order_wrap {
+    width: 90%;
+  }
+
+  .order_pay{
+    width:200px;
+  }
+
+  
+ 
+
+
+
+  /* 종류창 카드번호 할부여부  */
+  .order_way_type h2 {
+    font-size: 25px;
+  }
+
+  /* 회색 박스 결제정보창 select */
+  .order_way_type select {
+    height: 30px;
+  }
+
+  /* 회색 박스 결제정보창 input */
+  .order_way_type input {
+    height: 30px;
+  }
+}
+
+

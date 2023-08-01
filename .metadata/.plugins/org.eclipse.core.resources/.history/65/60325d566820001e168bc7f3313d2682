@@ -1,0 +1,76 @@
+<%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <!-- css -->
+  <jsp:include page="../modules/logincss.jsp"/>
+</head>
+
+
+<body>
+  <section id="wrap01">
+    <!-- 헤더 -->
+    <jsp:include page="../modules/header.jsp"/>
+    <div class="loginPage">
+      <h2 class="intro">회원가입</h2>
+      <p class="hello">반갑습니다<br>
+        세부 정보를 입력해주세요!</p>
+
+      <!-- id 입력칸 -->
+      <div class="input_box ib1">
+        <p class="introduce">아이디</p>
+        <input type="text" name="uid" id="uid" class="text t1" required>
+      </div>
+
+      <!-- 비밀번호 입력칸 -->
+      <div class="input_box ib2">
+        <p class="introduce">비밀번호</p>
+        <input type="text" name="passwd" id="passwd" class="text t1" required>
+      </div>
+
+      <!-- name 입력칸 -->
+      <div class="input_box ib3">
+        <p class="introduce">이름</p>
+        <input type="text" name="uname" id="uname" class="text t1" required>
+      </div>
+
+      <!-- email 입력칸 -->
+      <div class="input_box ib4">
+        <p class="introduce">e메일</p>
+        <input type="text" name="email" id="email" class="text t1" required>
+      </div>
+
+      <!-- 등록 -->
+      <div class="input_box ib5">
+        <div class="submit_line"></div>
+        <input type="submit" value="등록" id="submit">
+      </div>
+
+      <!-- 로그인페이지로 이동 -->
+      <div class="input_box ib5">
+         <p class="hello">이미 계정이 있습니까? <a href="#" class="login_bt">로그인</a></p>
+
+      </div>
+
+
+    </div>
+
+    <!-- 로그인 정보창 -->
+
+
+  </section>
+
+<jsp:include page="../modules/script.jsp"/>
+<script type="text/javascript" src="../js/login.js">
+</script>
+</body>
+
+</html>

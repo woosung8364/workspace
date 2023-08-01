@@ -1,0 +1,27 @@
+// 이벤트 소스에 이벤트 리스너 등록
+const button = document.querySelector('button');
+button.addEventListener('click', event => {
+  request();
+});
+
+function request(){
+  const name = document.querySelector("[type='text']").value;
+  const url = `/hello-view.jsp?name=${name}`;
+  fetch(url)
+  .then(response => {
+	  const res = response.text();
+	  console.log(res);
+  })
+  .then(message => showMessage(message))
+  .catch(error => alert(error));
+  
+}
+
+function showMessage(message){
+	alert(message);
+ const view = document.querySelector("#message");
+  if (view) {
+    view.innerHTML = message;
+  }
+ 
+}

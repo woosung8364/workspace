@@ -1,0 +1,23 @@
+1690181226543	Move 'login.jsp' to 'views'
+1690181241456	Move 'login.jsp' to 'member'
+1690181987190	Move 'membership.jsp' to 'member'
+1690181992545	Move 'mypage.jsp' to 'member'
+1690182024777	Move 2 resources to 'order'
+1690182036091	Move 3 resources to 'shopping'
+1690182900644	Rename package 'ezen.shoppingmall.web.work.product.controller'
+1690183581623	Move 'index.jsp' to 'WEB-INF'
+1690183690633	Move file
+1690183701863	Move 'login.jsp' to 'member'
+1690183718730	Move 'index.jsp' to 'views'
+1690184065343	Copy compilation unit
+1690186452339	Copy compilation unit
+1690246805289	Rename resource 'article.html'
+1690247240817	Move 2 resources to 'WEB-INF'
+1690441975518	Copy file
+1690520284559	Move 'article' to 'views'
+1690520290801	Move 3 resources to 'article'
+1690520676113	Copy files
+1690520689776	Move 'article' to 'views'
+1690520700523	Delete elements
+1690522041184	Copy files
+1690522044653	Delete element

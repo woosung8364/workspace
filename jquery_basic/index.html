@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="#">jquery</a>
+  <div id="post"></div>
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function (){
+      console.dir($);
+      const jObject = $("a");
+      console.dir(jObject);
+      $('a').click(function (){
+        jObject.hide();
+        alert('클릭했숑');
+        e.preventDefault();
+      });
+    });
+
+    $.ajax({
+      url:"https://jsonplaceholder.typicode.com/posts" ,
+      type : "get" ,
+      data : {
+        zipcode:97201
+      } ,
+      success: function (result){
+        console.log(result);
+        let list = ``;
+   
+        result.forEach(post => {
+          list += `<strong>${post.title}</strong>`;
+        });
+        $('#post').html(list);
+      }
+
+
+
+    })
+  </script>
+</body>
+</html>

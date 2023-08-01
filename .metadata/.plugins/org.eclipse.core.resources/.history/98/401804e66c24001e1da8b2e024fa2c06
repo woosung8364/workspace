@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>책 리스트</title>
+<script defer src="/js/books.js"></script>
+</head>
+<body>
+<button></button>
+<h2>서버로부터 수신한 책 목록</h2>
+
+</body>
+</html>

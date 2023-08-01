@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Servlet</title>
+</head>
+<body>
+<h1>서블릿 학습 내용입니다.</h1>
+<ol>
+	<li><a>처음 작성한 서블릿</a></li>
+</ol>
+<p>잘해봅시다..</p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+@media screen and (max-width:1000px){
+  
+  /* Notice FAQ Q&A 자유게시판 */
+  .article_menu{
+    width:80%;
+  }
+
+
+}
+
+@media screen and (max-width:500px){
+  
+  body{
+    min-width: 500px;
+  }
+
+  
+
+  /* Notice FAQ Q&A 자유게시판 */
+  .article_menu{
+    width:100%;
+  }
+
+
+  /* 문의하기 버튼 */
+  .article_page_write_bt{
+    width:40px;
+    height:20px;
+    bottom:30%;
+  }
+
+  /* 문의하기 버튼의 텍스트 색상 */
+  .article_page_write_bt a{
+    font-size:12px;
+    line-height: 20px;
+    bottom:0;
+    
+  }
+
+
+}

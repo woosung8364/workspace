@@ -1,0 +1,166 @@
+
+
+$(document).ready(function(){
+  
+   $('.recom_tab .btn_tab').click(function (e) {
+     e.preventDefault();
+     $('.recom_tab .btn_tab').removeClass('Act');
+     $(this).addClass('Act');
+
+     var idx = $('.recom_tab .btn_tab.Act').index();
+     $('.recom_list_wrap>ul').removeClass('On');
+     $('.recom_list_wrap>ul').eq(idx).addClass('On');
+   });
+
+
+
+  // with
+
+  $('.with_list').slick({
+        dots: false,
+        infinite: false,
+        arrows:true,
+        speed: 300,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        responsive: [
+          {
+            breakpoint: 1190,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+
+
+
+  let w01 = 0;
+  let w02 = 0;
+  let w03 = 0;
+  let w04 = 0;
+  let w05 = 0;
+
+
+
+  // 3.각 섹션의 높이값을 구해줄 변수 생성
+
+  let sec1Top = $('.content').offset().top;
+  let sec2Top = $('.with').offset().top;
+  let sec3Top = $('#index_content').offset().top;
+  let sec4Top = $('.culture').offset().top;
+  let sec5Top = $('footer').offset().top;
+  
+
+
+  //6. scroll event
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > sec1Top - 300) {
+      if (w01 == 0) {
+        wrap01();
+      }
+      
+    }
+    if ($(this).scrollTop() > sec2Top - 300) {
+      if (w02 == 0) {
+        wrap02();
+      }
+     
+    }
+    if ($(this).scrollTop() > sec3Top - 300) {
+      if (w03 == 0) {
+        wrap03();
+      }
+      
+    }
+    if ($(this).scrollTop() > sec4Top - 300) {
+      if (w04 == 0) {
+        wrap04();
+      }
+     
+    }
+    if ($(this).scrollTop() > sec5Top - 300) {
+      if (w05 == 0) {
+        wrap05();
+      }
+     
+    }
+
+ 
+
+
+  });
+
+  // 1.section 함수 시작
+  //4. w0변수를 각 함수에 넣어준다. 한번만 실행하기위해
+  function wrap01() {
+    // section2 -  content
+    w01 = 1;
+    $('.ct1').animate({'margin-right':'0' , 'opacity':'1'},1000);
+    $('.video').delay(500).animate({'left':'10%' , 'opacity':'1'},1000);
+
+  }
+
+
+  function wrap02() {
+    // section3 - with
+    w02 = 1;
+    $('.ct2').animate({'margin-right':'0' , 'opacity':'1'},1000);
+    $('.with_txt').delay(500).animate({'opacity':'1'},1000);
+    $('.w_list01').delay(800).animate({'margin-top':'0' , 'opacity':'1'},1000);
+    $('.w_list02').delay(1100).animate({'margin-top':'0' , 'opacity':'1'},1000);
+    $('.w_list03').delay(1400).animate({'margin-top':'0' , 'opacity':'1'},1000);
+    $('.w_list04').delay(1700).animate({'margin-top':'0' , 'opacity':'1'},1000);
+  }
+  function wrap03() {
+    // section 5 - index_content
+    // padding-right:718px;
+    w03 = 1;
+    $('.lou01  .cont_table').animate({ 'opacity':'1'},1000);
+    $('.lou02  .cont_table').delay(800).animate({ 'opacity':'1'},1000);
+
+   
+  }
+  function wrap04() {
+    // section6 - culture
+    w04 = 1;
+    $('.content_img img').animate({'opacity':'1'},1000);
+    $('.culture_txt').delay(500).animate({'opacity':'1'},1000);
+    $('.culture .img_holder').delay(1000).animate({'opacity':'1'},700);
+    
+  }
+  function wrap05() {
+    // wrap05
+    w05 = 1;
+
+    
+ 
+
+
+  }
+
+ 
+
+
+
+
+
+
+
+
+});

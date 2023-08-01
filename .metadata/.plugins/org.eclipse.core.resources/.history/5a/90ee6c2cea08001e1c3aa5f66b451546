@@ -1,0 +1,55 @@
+package ezen.jdbc;
+
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+/**
+ * JDBC API를 이용한 RDBMS (ORACLE) 연동
+ * @author i7C- 송우성
+ * 연습용으로 throw 사용
+ */
+public class JDBCExample2 {
+
+	public static void main(String[] args) throws ClassNotFoundException {
+
+		//db 연동을 위한 변수 생성
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String userid = "hr";
+		String passwd = "hr";
+		
+		//sql 명령어를 보내기 위한 변수 생성
+		// ? : 바인딩변수 : 값이 바뀔 수 있는 부분 
+		String sql = "INSERT INTO departments(department_id, department_name, manager_id ,location_id)"
+					 "VALUES(departments.seq.NEXTVAL,?,?, ?)";
+				
+		//드라이버 로딩
+		Class cls =Class.forName(driver);
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		con=DriverManager.getConnection(url,userid,passwd); 
+		pstmt=con.prepareStatement(sql); 
+		pstmt.set
+		System.out.println(pstmt);
+		int count= pstmt.executeUpdate();  
+		
+	
+		
+			
+				if(stmt != null) stmt.close();
+				if(con != null) con.close();
+		
+				
+			
+			
+			
+		}
+
+	
+	}
+
+}

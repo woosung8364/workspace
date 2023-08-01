@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position 활용 상단 메뉴 구성</title>
+  <style>
+    .navi {
+      list-style-type: none;
+      height: 30px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navi li {
+      float: left;
+      position: relative;
+      padding: 0;
+      line-height: 30px;
+      background: rgb(48, 69, 204);
+    }
+
+    .navi li a {
+      display: block;
+      font-size: 14px;
+      padding: 5px 25px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .navi li a:hover {
+      color: rgb(191, 255, 0);
+    }
+
+    /* 서브메뉴 설정 */
+    .navi li ul {
+      /* 투명하게 */
+      opacity: 0;
+      position: absolute;
+      width: 150px;
+      left: 0;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navi li:hover ul {
+      /* 불투명하게 */
+      opacity: 5;
+    }
+
+    .navi li ul li {
+      float: none;
+      height: 0;
+      line-height: 0;
+      background: none;
+    }
+
+    .navi li:hover ul li {
+      height: 30px;
+      line-height: 30px;
+      padding: 2px 0;
+    }
+
+    .navi li ul li a {
+      background: rgb(154, 161, 209);
+      color: #fff;
+    }
+
+    .navi li ul li a:hover {
+      background: rgb(105, 120, 216);
+    }
+
+    .navi li {
+      transition: all 0.2s;
+    }
+
+    .navi li a {
+      transition: all 0.2s;
+    }
+
+    .navi li ul {
+      transition: all 0.5s;
+    }
+
+    .navi li ul li {
+      transition: height 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="navi">
+    <li><a href="#"> Home </a></li>
+    <li><a href="#"> Web Development </a>
+      <ul>
+        <li><a href="#"> Web Design </a></li>
+        <li><a href="#"> HTML5 + CSS3 </a></li>
+        <li><a href="#"> JavaScript</a></li>
+        <li><a href="#"> React </a></li>
+      </ul>
+    </li>
+    <li><a href="#"> Board </a>
+      <ul>
+        <li><a href="#"> Q & A </a></li>
+        <li><a href="#"> GUEST</a></li>
+      </ul>
+    </li>
+    <li><a href="#"> profile</a></li>
+  </ul>
+
+</body>
+
+</html>

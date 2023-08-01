@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <display-name>jsp_basic</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- jsp 서블릿 컨테이너에 등록 -->
+  <servlet>
+  	<servlet-name>index</servlet-name>
+  	<jsp-file>/index.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>index</servlet-name>
+  	<url-pattern>/index</url-pattern>  
+  </servlet-mapping>
+  
+  <!-- 모든 서블릿/JSP를 위한 초기 파라메터 등록 -->
+  <context-param>
+  	<param-name>message</param-name>
+  	<param-value>반갑습니다. JSP</param-value>
+  </context-param>
+  
+  <!-- JSP 오류 페이지 설정 -->
+  <!-- 
+  <error-page>
+	  <exception-type>java.lang.Exception</exception-type>
+	  <location>/errors/error_500.jsp</location>
+  </error-page>
+  
+  <error-page>
+  		<error-code>400</error-code>
+	  <location>/errors/error_400.jsp</location>
+  </error-page>
+  
+  <error-page>
+  		<error-code>404</error-code>
+	  <location>/errors/error_404.jsp</location>
+  </error-page>
+   -->
+  
+</web-app>
+
+
+
+

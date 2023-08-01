@@ -1,0 +1,84 @@
+/* 구글폰트 링크 */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+.write_header{
+  border-bottom:1px solid #aaaaaa;
+  background-color: #ffffff;
+}
+
+.write_all{
+  width:100%;
+  height:1100px;
+  background-color: #f3f3f3;
+  z-index: 0;
+}
+
+/* 문의하기 전체영역  */
+.wirte_wrap{
+  position:relative;
+  top:90px;
+  height:1000px;
+  width:90%;
+  margin:0 auto;
+  /* background-color: rgb(185, 219, 250); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding:20px;
+}
+
+
+.wirte_wrap form{
+  width:100%;
+  height:100%;
+}
+
+/* 문의하기 등록버튼 전체영역 */
+.write_content_head{
+  width:100%;
+  justify-content: space-between;
+  display:flex;
+}
+
+
+.write_notice{
+	font-size:40px;
+}
+
+
+
+.notice_regist{
+  margin-top:10px;
+  padding:0;
+  width:80px;
+  height:40px;
+  border-radius:10px;
+  color:#fff;
+  font-size:20px;
+  font-family: 'Buri',serif;
+  background-color: #5c95f0;
+}
+
+
+/* 제목입력 */
+.write_input_title{
+border:1px solid #dadada;
+margin-top:20px;
+width:100%;
+height:40px;
+border-radius:10px;
+}
+
+/* 내용입력 */
+.write_input_content{
+  border:1px solid #000000;
+  margin-top:20px;
+  width:100%;
+  height: 600px;
+  text-align: left;
+  border-radius:10px;
+}
+

@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+/* 구글폰트 링크 */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+
+/* h2 태그 기본폰트 지정 */
+li , a , p , div {
+  font-family: 'NotoSans', sans-serif;
+}
+
+/* h2 태그 기본폰트 지정 : 나눔명조 */
+h2 , h1{
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+/* 헤더 */
+
+header{
+ border-bottom: 1px solid #dadada; 
+  top:0;
+}
+
+/* 이미지와 텍스트를 모두 감싸기위한 div */
+.content_wrap{
+  position:relative;
+  top:70px;
+  width:90%;
+  margin:0 auto;
+  height:700px;
+  /* background-color: rgb(111, 255, 0); */
+}
+
+/* 자식인자(absoulte) - 텍스트 영역 */
+.prd_primary_wrap{
+  position:absolute;
+  width:50%;
+  height:100%;
+  right:0;
+  top:0;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color:aquamarine; */
+}
+
+/* 자식인자(absoulte) - 이미지 영역 - left:0; 입력시 ( .content_wrap ) 기준 맨왼쪽으로 이동함 */
+.prd_img{
+  position:absolute;
+  left:0;
+  top:0;
+  width:50%;
+  height:100%;
+  display:flex;
+  align-items: center;
+
+  
+}
+
+
+.prd_img_wrap{
+  position:relative;
+  margin-left:100px;
+  width:80%;
+  height:80%;
+}
+
+
+/* h1 : 센슈얼 파우더 매트 리퀴드 */
+.prd_name{
+  font-size:24px;
+  font-weight: bold;
+}
+
+/* SENSUAL POWDER MATTE LIQUID */
+/* 상품 디테일 설명 서브텍스트 */
+.prd_name_en {
+  color:#00000094;
+  font-size: 1.500vw;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: -.07em;
+  word-spacing: 0.05em;
+}
+
+/* 5g */
+.capacity {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  padding-top:5px
+}
+
+/* 한 번의 터치로 각질 부각 없이 풍부한 컬러로 감싸주는 편안한 */
+.prd_desc{
+  font-size:16px;
+  font-weight: 500;
+  padding-bottom: 5px;
+  padding-top:5px;
+  margin-bottom: 15px;
+}
+
+
+
+/* 리뷰보기 버튼 */
+.go_review{
+
+  text-align: center;
+  width: 100%;
+  height:30px;
+  margin-bottom: 30px;
+  display:flex;
+}
+
+/* 리뷰하기버튼에 들어가는 a태그 */
+.review{
+  width:30%;
+  height:100%;
+  background-color: #fffcfc;
+  border-bottom: 1px solid #bcbcbc;
+  border-radius: 20px;
+}
+
+/* 물품 갯수를 선택해주세요 :: select */
+.prd_select_count{
+  font-size:15px;
+  margin-left:10px;
+  width:30%;
+  height:100%;
+  background-color: #fffcfc;
+  border-bottom: 1px solid #bcbcbc;
+  border-radius: 20px;
+}
+
+
+
+
+/* 이미지 크기 따로설정 */
+/* 이미지가 클시 컨텐츠를 제멋대로 빠져나옵니다.. */
+.prd_img img{
+  width:100%;
+  height: 100%;
+}
+
+
+
+
+/* 장바구니 , 구매하기 */
+
+#xAP {
+  margin-top: 30px;
+  border: 1px solid black;
+  color: white;
+  padding:12px 60px 12px 60px;
+  background-color: black;
+}
+
+/* 상세페이지 전체영역 */
+.pdp_wrap {
+  display: block;
+  width: 100%;
+  color: #333;
+  text-align: center;
+  margin-top: 200px;
+  font-family: 'Montserrat' ,Noto Sans, sans-serif;
+}
+
+/* 상세페이지 메인타이틀 */
+.bx_title {
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: 0.02em;
+  margin-bottom: 15px;
+}
+
+/* 상세페이지 서브타이틀 */
+.bx_desc {
+  font-size: 15px;
+  opacity:0.7;
+  letter-spacing: 0.02em;
+  margin-bottom: 30px;
+}
+
+.pdp_inner .pyc_gap{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  padding: 4.668vw 0 3.516vw;
+}
+
+
+
+
+
+.pyc_img_wrap {
+  margin-bottom: 50px;
+}
+
+

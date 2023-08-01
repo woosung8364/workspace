@@ -1,0 +1,44 @@
+1689558656519	Rename type 'ControllerV3HandlerAdapter'
+1689558787640	Rename type 'ControllerV3'
+1689558878040	Delete elements
+1689558943003	Rename type 'FrontControllerServletV6'
+1689559186501	Rename type 'ControllerV4HandlerAdapter'
+1689559217541	Rename type 'ControllerV4'
+1689559407237	Rename type 'ControllerV5HandlerAdapter'
+1689559442520	Rename type 'ControllerV5'
+1689559448419	Delete elements
+1689559760041	Delete element
+1689559780780	Rename type 'MemberListControllerV4'
+1689559839261	Delete elements
+1689559848462	Rename type 'MemberSignupControllerV4'
+1689559895421	Delete elements
+1689559903617	Rename type 'MemberSignupActionControllerV4'
+1689560085839	Rename package 'ezen.mvcproject.article.controller'
+1689560527337	Copy package
+1689560559020	Rename package 'ezen.mvcproject.domain.article.dao'
+1689560591459	Rename package 'ezen.mvcproject.domain.article.dto'
+1689560675031	Rename package 'ezen.mvcproject.domain.common.database'
+1689563147921	Copy compilation unit
+1689563334344	Copy file
+1689563439574	Rename resource 'request-mappting.properties'
+1689564341788	Rename package 'ezen.mvcproject.web.article.controller'
+1689569723086	Rename package 'ezen.mvcproject.domain.member.dao'
+1689569730920	Rename package 'ezen.mvcproject.domain.member.dto'
+1689569738392	Rename package 'ezen.mvcproject.web.ajax.controller'
+1689571936087	Delete element
+1689575934377	Copy file
+1689580227351	Copy compilation unit
+1689580345171	Copy file
+1689580349081	Rename resource 'books.html'
+1689580784252	Copy compilation unit
+1689648954022	Copy file
+1689648996102	Rename resource 'fetchXExamle.js'
+1689649102618	Copy file
+1689651292775	Rename resource 'fetchExamle.js'
+1689651702506	Copy file
+1689661921810	Copy compilation unit
+1689662755541	Copy file
+1689733899319	Copy compilation unit
+1689734019643	Copy file
+1689734523351	Copy file
+1689734550523	Copy file

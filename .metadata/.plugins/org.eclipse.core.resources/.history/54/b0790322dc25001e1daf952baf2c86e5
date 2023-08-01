@@ -1,0 +1,24 @@
+# 웹 클라이언트 요청에 대한 세부 핸들러 등록
+# 회원 관리
+/ajax/member/signup=ezen.mvcframework.web.member.controller.MemberSignupController
+/ajax/member/signup-action=ezen.mvcframework.web.member.controller.MemberSignupActionController
+/ajax/members=ezen.mvcframework.web.member.controller.MemberListController
+/ajax/member/hello=ezen.mvcframework.web.member.controller.HelloHandler
+/ajax/member/signup=ezen.mvcframework.web.member.controller.MemberSignupController
+/ajax/member/signup-action=ezen.mvcframework.web.member.controller.MemberSignupActionController
+/ajax/member/idcheck=ezen.mvcframework.web.member.controller.IdCheckController
+
+# articles
+/ajax/articles=ezen.mvcframework.web.article.controller.ArticleListController
+/ajax/article/articles-action=ezen.mvcframework.web.article.controller.ArticleActionController
+/ajax/today=ezen.mvcframework.web.member.controller.TodayController
+
+
+# ajax 
+/ajax/hello=ezen.mvcframework.web.ajax.controller.HelloAjaxController
+/ajax/hello-action=ezen.mvcframework.web.ajax.controller.HelloActionController
+
+# books
+/ajax/books=ezen.mvcframework.web.ajax.controller.BookListController
+/ajax/books-action=ezen.mvcframework.web.ajax.controller.BookListActionController
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PortFolio</title>
+  <!-- meta -->
+  <jsp:include page="/modules/css.jsp"/>
+  <link rel="stylesheet" href="/css/article.css">
+</head>
+
+<body>
+  <section id="wrap01">
+   <jsp:include page="/modules/menuList.jsp"/>
+    <div class="circle"></div>
+    <div class="arc_wrap">
+      <div class="article">
+
+        <div class="article_header_contents">
+          <h2 class="header_text">게시글</h2>
+          <p class="ps">게시글을 남겨주세요.</p>
+          <div class="art_line"></div>
+        </div>
+
+        <div class="input_contents">
+          <p class="date">2023-05-05</p>
+          <input type="text" name="textArea" id="textArea">
+          <button class="save_text">글 남기기</button>
+        </div>
+
+        <div class="text_contents tc1">
+          <h2 class="text_date">김철수 | 2023-05-05 | 12:00</h2>
+          <p class="text_contnet">Lorem ipsum dolor sit amet consectetur<br>
+            adipisicing elit. Eligendi accusantium magnam sequi laudantium,<br>
+            enim aperiam tempore veniam rerum doloribus consectetur est quasi nulla earum, excepturi eum iure vel fuga?
+            Excepturi.</p>
+        </div>
+
+        <div class="text_contents tc2">
+          <h2 class="text_date">김철수 | 2023-05-05 | 12:00</h2>
+          <p class="text_contnet">Lorem ipsum dolor sit amet consectetur<br>
+            adipisicing elit. Eligendi accusantium magnam sequi laudantium,<br>
+            enim aperiam tempore veniam rerum doloribus consectetur est quasi nulla earum, excepturi eum iure vel fuga?
+            Excepturi.</p>
+        </div>
+
+        <div class="text_contents tc2">
+          <h2 class="text_date">김철수 | 2023-05-05 | 12:00</h2>
+          <p class="text_contnet">Lorem ipsum dolor sit amet consectetur<br>
+            adipisicing elit. Eligendi accusantium magnam sequi laudantium,<br>
+            enim aperiam tempore veniam rerum doloribus consectetur est quasi nulla earum, excepturi eum iure vel fuga?
+            Excepturi.</p>
+        </div>
+
+        <div class="text_contents tc2">
+          <h2 class="text_date">김철수 | 2023-05-05 | 12:00</h2>
+          <p class="text_contnet">Lorem ipsum dolor sit amet consectetur<br>
+            adipisicing elit. Eligendi accusantium magnam sequi laudantium,<br>
+            enim aperiam tempore veniam rerum doloribus consectetur est quasi nulla earum, excepturi eum iure vel fuga?
+            Excepturi.</p>
+        </div>
+
+        <div class="text_contents tc2">
+          <h2 class="text_date">김철수 | 2023-05-05 | 12:00</h2>
+          <p class="text_contnet">Lorem ipsum dolor sit amet consectetur<br>
+            adipisicing elit. Eligendi accusantium magnam sequi laudantium,<br>
+            enim aperiam tempore veniam rerum doloribus consectetur est quasi nulla earum, excepturi eum iure vel fuga?
+            Excepturi.</p>
+        </div>
+
+        <div class="text_contents tc2">
+          <h2 class="text_date">김철수 | 2023-05-05 | 12:00</h2>
+          <p class="text_contnet">Lorem ipsum dolor sit amet consectetur<br>
+            adipisicing elit. Eligendi accusantium magnam sequi laudantium,<br>
+            enim aperiam tempore veniam rerum doloribus consectetur est quasi nulla earum, excepturi eum iure vel fuga?
+            Excepturi.</p>
+        </div>
+
+        <div class="text_contents tc2">
+          <h2 class="text_date">김철수 | 2023-05-05 | 12:00</h2>
+          <p class="text_contnet">Lorem ipsum dolor sit amet consectetur<br>
+            adipisicing elit. Eligendi accusantium magnam sequi laudantium,<br>
+            enim aperiam tempore veniam rerum doloribus consectetur est quasi nulla earum, excepturi eum iure vel fuga?
+            Excepturi.</p>
+        </div>
+
+
+        <div class="art_next_line">
+          <ul class="page_item">
+            <li><a class="page_list first_page" href="#">
+                << </a>
+            </li>
+            <li><a class="page_list p01" href="#">1</a></li>
+            <li><a class="page_list p02" href="#">2</a></li>
+            <li><a class="page_list p03" href="#">3</a></li>
+            <li><a class="page_list p04" href="#">4</a></li>
+            <li><a class="page_list p05" href="#">5</a></li>
+            <li><a class="page_list last_page" href="#">>></a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="contents_box">
+      <!-- 헤더 -->
+     <jsp:include page="/modules/header.jsp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </section>
+
+
+ <jsp:include page="/modules/script.jsp"/>
+</body>
+
+</html>

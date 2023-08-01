@@ -1,0 +1,63 @@
+package ezen.fileupload;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * 파일 업로드 서블릿
+ */
+@WebServlet("/upload")
+@MultipartConfig(
+fileSizeThreshold = 1024 * 1024 * 1,
+maxFileSize = 1024 * 1024 * 10,
+maxRequestSize = 1024 * 1024 * 15,
+location = “c:/upload"
+)
+public class FileUploadServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		request.setCharacterEncoding("utf-8");
+//		String writer = request.getParameter("uploader");
+//		String file = request.getParameter("upfile");
+//		System.out.println("업로더 : " + writer);
+//		System.out.println("파일 : " + file);
+//		// 서블릿 API를 이용하여 업로드 파일 데이터 읽기
+//		InputStream in = request.getInputStream();
+//		byte[] buffer = new byte[1024];
+//		int count = 0;
+//		while((count=in.read(buffer)) != -1){
+//		String data = new String(buffer, 0, count);
+//		System.out.println(data);
+//		}
+//		in.close();
+//	}
+	
+	
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		String writer = request.getParameter("uploader");
+		String file = request.getParameter("upfile");
+		System.out.println("업로더 : " + writer);
+		System.out.println("파일 : " + file);
+		// 서블릿 API를 이용하여 업로드 파일 데이터 읽기
+		InputStream in = request.getInputStream();
+		byte[] buffer = new byte[1024];
+		int count = 0;
+		while((count=in.read(buffer)) != -1){
+		String data = new String(buffer, 0, count);
+		System.out.println(data);
+		}
+		in.close();
+	}
+
+}

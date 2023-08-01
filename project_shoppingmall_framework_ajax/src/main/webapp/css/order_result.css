@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/* 구글폰트 링크 */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+
+
+/* 전체영역 지정 */
+.order_result_wrap{
+  width:70%;
+  height:700px;
+  margin:0 auto;
+  top:120px;
+  /* background-color: antiquewhite; */
+  position:relative;
+}
+
+/* 주문이 완료되었습니다 : 메인텍스트 */
+.order_success_text{
+  position:absolute;
+  top:1%;
+  width:100%;
+  text-align: center;
+  font-size:50px;
+}
+
+/* 컨텐츠 영역을 감싸는 전체영역 */
+.order_result_contents{
+  position:absolute;
+  padding:50px;
+  width:800px;
+  left:calc(50% - (800px / 2));
+  top:18%;
+  height:500px;
+  background-color: #d4d4d4;
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  border:1px solid #a0a0a0;
+  border-radius: 15px;
+}
+
+/* 컨텐츠 : 텍스트 영역 */
+.order_result_text{
+  width:30vw;
+}
+
+.order_result_text h1{
+  font-size:35px;
+  margin-bottom:30px;
+}
+
+.order_result_text ul{
+  margin-top:10px;
+  width:500px;
+}
+
+
+.order_result_text span{
+  font-weight: 400;
+  font-size:28px;
+}
+
+
+.order_result_goHome{
+  position:relative;
+  width:300px;
+  height:70px;
+  border-radius: 15px;
+  left:calc(50% - (300px / 2));
+  bottom:8%;
+  background-color: #7c99f9;
+  margin-top: 150px;
+}
+
+
+.order_result_goHome a {
+  display:block;
+  text-align: center;
+  line-height: 70px;
+  width:100%;
+  height:100%;
+  font-size:32px;
+  color:#fff;
+}
+
+
+

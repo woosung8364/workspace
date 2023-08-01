@@ -1,0 +1,10 @@
+package ezen.jdbc;
+
+/**
+ * employees 테이블을 추상화
+ * @author i7C- 송우성
+ *
+ */
+public class Employee {
+
+}

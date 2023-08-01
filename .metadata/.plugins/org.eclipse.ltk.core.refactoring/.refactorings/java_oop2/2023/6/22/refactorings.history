@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;ezen.oop.lamda&apos; to &apos;ezen.oop.lambda&apos;&#x0D;&#x0A;- Original project: &apos;java_oop2&apos;&#x0D;&#x0A;- Original element: &apos;java_oop2/src/ezen.oop.lamda&apos;&#x0D;&#x0A;- Renamed element: &apos;java_oop2/src/ezen.oop.lambda&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;ezen.oop.lamda&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;ezen.oop.lamda" name="ezen.oop.lambda" qualified="false" references="true" stamp="1685683975840" textual="false" version="1.0"/>
+</session>

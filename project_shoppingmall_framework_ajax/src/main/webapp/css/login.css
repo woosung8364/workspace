@@ -1,0 +1,225 @@
+/* 로그인 페이지의 디자인을 담당하는 스타일 시트 */
+
+/* 구글폰트 링크 */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+p , a{
+  font-weight: bold;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h1{
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+/* 헤더 */
+#login_header {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #00000023;
+  /* background-color: antiquewhite; */
+}
+
+/* 헤더 콘텐츠를 가운대 정렬하기 위한 영역설정 */
+.login_header_wrap {
+  width: 70%;
+  height: 70px;
+  margin: 0 auto;
+  /* background-color: darkcyan; */
+}
+
+
+/* 헤더 : 로그인 텍스트 문구  */
+#login {
+  width: 100%;
+  color: rgb(0, 0, 0);
+  line-height: 70px;
+  text-align: center;
+  z-index: 1;
+  font-size: 18px;
+}
+
+
+/* 로그인페이지 컨텐츠 영역 */
+.login_contents {
+  margin: 50px auto 0 auto;
+  width: 70%;
+  height: 800px;
+  /* background-color: antiquewhite; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* 로그인페이지 상단 텍스트 - 아모레퍼시픽 ~~ */
+.login_contents>#login_first {
+  text-align: center;
+  color: black;
+  font-size: 25px;
+}
+
+/* 아이디 , 비밀번호 입력 텍스트 */
+.login_contents input {
+  width: 40%;
+  border-radius: 5px;
+}
+
+.uid_form{
+  width:40%;
+  height:230px;
+}
+
+#uid {
+  width:100%;
+  margin:20px 0;
+
+}
+
+#upw {
+  width:100%;
+}
+
+/* 아이디 저장 버튼 */
+
+.save_id {
+  margin-top: 30px;
+  width: 40%;
+}
+
+/* 아이디 저장 체크버튼 */
+.save_check {
+  width: 10px;
+  height: 10px;
+  background-image: url(../img/login_save_off.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0;
+  border: none;
+  display: inline-block;
+}
+
+/* 클릭시 On 클래스가 붙으면서 버튼이미지가 바뀌게 설계 */
+.save_check.On {
+  background-image: url(../img/login_save_on.png);
+}
+
+.save_text {
+  display: inline-block;
+}
+
+
+
+
+/* 로그인 정보 제출 */
+.login {
+  margin-top: 20px;
+  width: 97%;
+  height: 20px;
+  border: solid 1px #5c95f0;
+  background-color: #5c95f0;
+  font-size: 25px;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+/* 모바일 , 카카오 , 네이버 , 기타 로그인 */
+.platform_login {
+  margin-top: 30px;
+  width: 40%;
+  /* background-color: #5c95f0; */
+  display: inline-flex;
+  justify-content: center;
+  border-top: 1px solid #0000003b;
+  border-bottom: 1px solid #0000003b;
+  padding: 20px;
+
+}
+
+.login_way {
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login_way.lw4 {
+  margin-right: 0;
+}
+
+.login_way img {
+  width: 50px;
+}
+
+.login_way p {
+  color: #000;
+  font-size: 14px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+
+/* 아이디 , 비밀번호 찾기 */
+.find_account {
+  margin-top: 40px;
+}
+
+.find_account a {
+  color: #00000069;
+  font-weight: bold;
+}
+
+.find_account p {
+  font-size: 15px;
+  display: inline-block;
+}
+
+.find_id:after {
+  margin: 0 5px 0 8px;
+  content: "|";
+}
+
+
+/* 회원가입 */
+
+.regist_account {
+  width: 40%;
+  height: 50px;
+  margin-top: 30px;
+  border: 1px solid #00000069;
+  border-radius: 5px;
+  
+  position:relative;
+}
+
+.regist_account p , a{
+  font-size:15px;
+}
+
+ /* 전체영역을 감싸는 a 태그  */
+.regist_account_wrap{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:50px;
+  display:block;
+  color:#000;
+}
+
+
+/* 텍스트를 정렬하기위한 영역  */
+.regist_account_text{
+  width:100%;
+  height:100%;
+  padding:15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

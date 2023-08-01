@@ -1,0 +1,262 @@
+@charset "UTF-8";
+
+/* 구글폰트 링크 */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+/* 태그 기본폰트 지정 */
+li , a , p , div , button {
+  font-family: 'Noto Sans', sans-serif;
+  color:#000;
+}
+
+/* h2 태그 기본폰트 지정 : 나눔명조 */
+h1 ,h2{
+  font-family: 'Nanum Myeongjo', serif;
+  color:#000;
+}
+
+/* 헤더 및 구분선 */
+.order_header{
+  border-bottom: 1px solid #dadada;
+}
+
+/* 메인타이틀 */
+.order_main_title{
+  position:absolute;
+  top:10%;
+  width:100%;
+  text-align:center;
+  font-size:50px;
+}
+
+.order_wrap{
+  position:relative;
+  height:1000px;
+  top:20%;
+  width:70%;
+  margin:0 auto;
+  /* background-color: antiquewhite; */
+}
+
+/* 메인컨텐츠 보조영역 */
+.order_contents{
+  width:100%;
+  margin:0 auto;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+/* 결제정보 텍스트 */
+.order_recent{
+  width:100%;
+  padding:20px;
+  font-size:36px;
+  border-bottom: 1px solid #dadada;
+}
+
+
+/* 결제 정보 대분류 영역지정 */
+.order_information{
+  width:500px;
+  position:relative;
+  margin-top:20px;
+  padding:20px;
+}
+
+.order_info_title , .order_info_detail{
+  display:inline-block;
+  
+}
+
+
+.order_info_detail{
+  position:absolute;
+  font-size:24px;
+  right:5%;
+}
+
+.order_info_detail p{
+  color:#8e8e8e;
+}
+
+
+.order_information h2{
+  font-size:24px;
+}
+
+/* 결제수단 체크박스 */
+.order_check{
+  padding:0 20px 50px 20px;
+  width:100%;
+}
+
+.order_check input{
+  width:25px; 
+  height:25px;
+  margin-top:20px;
+  padding:0;
+}
+
+
+/* 결제수단 체크박스 전체영역지정 */
+.order_check {
+  font-size:16px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #dadada;
+}
+
+
+/* 결제수단 체크스 라벨 */
+.order_check label{
+  width:100%;
+  display:inline-block;
+  position:relative;
+  
+}
+
+
+.order_check p{
+  position: absolute;
+  top:40%;
+  margin-left:20px;
+  display:inline-block;
+}
+
+
+/* 결제방법 전체영역 */
+.order_way_list{
+  width:100%;
+  margin-top:30px;
+  padding:20px;
+  background-color: #dadada;
+}
+
+.order_way_type{
+  width:100%;
+  height:100px;
+  /* background-color: rgb(207, 144, 61); */
+  display:flex;
+  align-items: center;
+}
+
+.order_type_select{
+  width:300px;
+  margin-left:15px;
+}
+
+.owts1{
+  margin-left:24px;
+}
+
+.order_way_type input{
+  width:300px;
+  height:22px;
+  margin-left:15px;
+}
+
+
+
+.order_way_list_wrap{
+  width:100%;
+  
+}
+
+/* 총금액 구획을 감싼 전체영역 */
+.order_all_price{
+  position:relative;
+  margin:0 auto;
+  top:20px;
+  width:100%;
+  height:100px;
+  line-height: 100px;
+  border-top:1px solid #dadada;
+  /* background-color: darkcyan; */
+  font-size:25px;
+  
+}
+
+.order_all_price h1{
+  position:absolute;
+  left:0;
+  display:inline-block;
+}
+
+.order_pay{
+  position:absolute;
+  right:0;
+  top:calc(50% - (60px / 2));
+  padding:0;
+  width:300px;
+  height:60px;
+  border-radius: 10px;
+  background-color:#7c98f9;
+  color:#fff;
+}
+
+
+  /* 모달 body */
+  .modal {
+    width:500px;
+    height:300px;
+    opacity:0;
+    transition: 0.5s all;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index:99;
+}
+
+.modal h2{
+  width:100%;
+  font-size:32px;
+  font-weight: bold;
+  text-align: center;
+  margin-top:50px;
+}
+
+/* 모달 서브 wrap */
+.modal_iframe{
+  position:relative;
+}
+
+.modal_bt{
+  position:absolute;
+  width:300px;
+  height:300px;
+  top:15%;
+  left:calc(50% - (300px / 2));
+}
+
+.yes , .close_modal{
+  position:absolute;
+  width:200px;
+  height:50px;
+  border-radius:10px;
+  margin:20px auto 0 auto;
+  border:1px solid #dadada;
+  background-color: #89a3f8;
+  font-size:30px;
+  line-height:50px;
+  text-align: center;
+  color:#fff;
+  padding:0;
+}
+
+.yes{
+  left:-20%;  
+}
+
+.yes a{
+  color:#fff;
+  font-size:30px;
+}
+
+.close_modal{
+  background-color: #f88989;
+  right:-20%;
+  font-weight: bold;
+}

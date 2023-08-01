@@ -1,0 +1,5 @@
+package ezen.mvcframework.web.member.controller;
+
+public class articleHandler {
+
+}

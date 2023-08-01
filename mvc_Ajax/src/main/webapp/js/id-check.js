@@ -1,0 +1,31 @@
+// 이벤트 소스에 이벤트 리스너 등록
+
+document.querySelector('#id').addEventListener('input',  event => {
+  let inputId = event.target.value;
+  idCheck(inputId);
+  // memberRegister();
+});
+
+function idCheck(inputId){
+  const url = `/ajax/member/idcheck?id=${inputId}`;
+  fetch(url)
+  .then(response => response.json())
+  .then(result => {
+	 console.dir(result);
+  });
+  
+}
+
+function showResult(result){
+	// alert(message);
+ const view = document.querySelector("#result");
+  if (view) {
+	  if(result){
+		  view.innerHTML = "사용 불가능허유...."
+	  } else{
+		 view.innerHTML = "사용가능허유...."
+	  }
+    
+  }
+ 
+}

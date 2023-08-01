@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      color:red;
+    }
+    header{
+      background-color: aquamarine;
+      color:blue;
+      font-size:50px;
+      font-weight: bold;
+    }
+    /* 아이디선택자 */
+
+    .contents{
+      background-color: floralwhite;
+    }
+
+    .some{
+      color:blueviolet;
+    }
+    [name=top]{
+      color:aquamarine;
+      background-color: azure;
+    }
+
+
+    [data-title *="b"]{
+      background-color: aqua;
+    }
+
+
+    [data-title ^="b"]{
+      color:antiquewhite;
+    }
+
+    header,nav,aside{
+     border: 5px solid red;
+    }
+
+    #box>ul>li>div{
+      background-color: antiquewhite;
+    }
+
+    #box div{
+      background-color: brown;
+    }
+    
+    h1 ~ h2{
+      border:1px solid pink;
+    }
+    
+    p::after{
+      content: "<h2> 동적추가 </h2>";
+      background-color: yellow;
+      
+    }
+
+    ::selection{
+      background-color: darkcyan;
+      color:dodgerblue;
+    }
+
+    a{
+      background-color: violet;
+    }
+
+    a:link{
+      text-decoration: none;
+    }
+
+    a:active{
+      background-color:darkorange;
+    }
+
+    input:focus{
+      background-color: orange;
+      border: 20px solid darkorchid;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 인라인 css 적용 -->
+  <a name="top">문서의 첫번째 위치</a>
+  <header style = "background-color: aquamarine; color:green;">로고 , 메뉴 , 검색</header>
+  <nav style = "color:blueviolet; background-color: pink; font-weight: bold; font-style: italic;">내부 , 외부 리소스 연결하는 메뉴 구성</nav>
+  <aside>부 메뉴</aside>
+  <p class="contents some">클래스 선택자 연습입니다...</p>
+  <p class="contents">클래스 선택자 연습입니다...</p>
+  <p class="contents">클래스 선택자 연습입니다...</p>
+  
+  <span class="contents">클래스 선택자 연습입니다...</span>
+  <span class="contents">클래스 선택자 연습입니다...</span>
+  <span class="contents">클래스 선택자 연습입니다...</span>
+  <a href="#">현재페이지</a>
+ 
+  <main>
+   
+    <section>
+      <h2>오늘부터 CSS3 공부입니다..</h2>
+       <article>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel eum in eaque impedit 
+        labore quidem delectus, nemo excepturi voluptate itaque cum velit officiis atque dolorem. 
+        Id atque illo eius eum!
+       </article>
+       
+    </section>
+
+    <section>
+      논리적 주 내용 
+    </section>
+
+    <section>
+      논리적 주 내용 
+    </section>
+
+    <section>
+      논리적 주 내용 
+    </section>
+
+    <section>
+      논리적 주 내용 
+    </section>
+
+  </main>
+
+  <footer> 
+    발입니다요..
+  </footer>
+  <!-- 사용자 추가 속성 -->
+  <p data-title="bangry">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium ipsam 
+    facere officia neque quasi iure. Sit repellat provident quibusdam nisi, 
+    fugiat autem vero quod repellendus eum minima impedit molestiae. Eaque!</p>
+  <a href="#top">맨위로</a>
+
+  <div id="box">
+    <ul>
+      <li>
+        <div>나는 자식입니다</div>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="dong">
+    <li id="qwe">
+      <div class="dfdf">
+        
+      </div>
+    </li>
+  </ul>
+
+
+  <h2>work</h2>
+  <h1>job</h1>
+  <h2>work</h2>
+  <h2>work</h2>
+  <h2>work</h2>
+  <h3>hire_date</h3>
+  <h4>employee_id</h4>
+  <h5>h2h3</h5>
+  <input type="text">
+</body>
+</html>

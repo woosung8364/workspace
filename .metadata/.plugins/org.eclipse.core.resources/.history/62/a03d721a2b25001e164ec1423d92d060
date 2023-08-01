@@ -1,0 +1,23 @@
+<%@page import="com.fasterxml.jackson.databind.ObjectMapper"%>
+<%@page import="ezen.mvcframework.domain.member.dto.Member"%>
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="java.io.BufferedReader"%>
+<%@ page contentType="text/plain; charset=utf-8" %>
+<%
+  /*
+  BufferedReader in = new BufferedReader(new InputStreamReader(request.getInputStream() , "utf-8"));
+  StringBuilder sb = new StringBuilder();
+  String line = null;
+  while((line=in.readLine()) != null){
+	  sb.append(line);
+  }
+  System.out.println(sb.toString());
+  */
+  ObjectMapper objectMapper = new ObjectMapper();
+  Member member = objectMapper.readValue(request.getInputStream(), Member.class);
+  System.out.println(member);
+  //DB 인서트 완료 가정
+  
+  
+  String result = "{\"result\": true ,  \"message\", \"\":\"\" }";
+%>

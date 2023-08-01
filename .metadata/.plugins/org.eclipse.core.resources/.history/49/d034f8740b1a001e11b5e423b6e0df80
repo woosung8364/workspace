@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Servlet Web Programming</title>
+</head>
+<body>
+	<h1>웹 애플리케이션 홈페이지 입니다</h1>
+	<ol>
+	<li><a href="hello">aaaa</a></li>
+	</ol>
+</body>
+</html>

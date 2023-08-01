@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset=utf-8" />
+    <title>홈페이지</title>
+    <style>
+        hr {
+            display: none;
+        }
+
+        ul,
+        ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        fieldset legend {
+            display: none;
+        }
+
+        fieldset {
+            border: 0;
+        }
+
+        header,
+        section,
+        nav,
+        footer,
+        aside {
+            display: block;
+        }
+
+        div.wrapper {
+            margin: 0 auto;
+            width: 950px;
+            overflow: hidden;
+        }
+
+        div.wrapper header {
+            height: 107px;
+        }
+
+        div.wrapper header h1 {
+            width: 250px;
+            height: 27px;
+            float: left;
+            text-indent: -5000px;
+            background: url(images/logo.gif) no-repeat 0 0;
+        }
+
+        div.wrapper ul {
+            float: right;
+        }
+
+        div.wrapper ul li {
+            float: left;
+        }
+
+        div.wrapper ul li a {
+            padding: 0 10px;
+            border-right: 1px solid #C5C5C5;
+            color: #252424;
+        }
+
+        div.wrapper ul li.home a {
+            padding-left: 28px;
+            background: url(images/home.gif) 10px 0 no-repeat;
+        }
+
+        div.wrapper ul li.cart a {
+            padding-left: 28px;
+            background: url(images/cart.gif) 10px 0 no-repeat;
+        }
+
+        div.wrapper nav {
+            height: 37px;
+            clear: both;
+            background: url(images/nav.gif) no-repeat;
+        }
+
+        div.wrapper nav ol {
+            margin-left: 298px;
+        }
+
+        div.wrapper nav li {
+            float: left;
+        }
+
+        div.wrapper nav li a {
+            text-indent: -5000px;
+            display: block;
+            height: 37px;
+            width: 100px;
+            background: url(images/nav.gif) no-repeat;
+        }
+
+        div.wrapper nav li.html a {
+            background-position: -298px 0;
+        }
+
+        div.wrapper nav li.css a {
+            background-position: -398px 0;
+        }
+
+        div.wrapper nav li.script a {
+            background-position: -498px 0;
+        }
+
+        div.wrapper nav li.dom a {
+            background-position: -598px 0;
+        }
+
+        div.wrapper nav li.html a:hover {
+            background-position: -298px -37px;
+        }
+
+        div.wrapper nav li.css a:hover {
+            background-position: -398px -37px;
+        }
+
+        div.wrapper nav li.script a:hover {
+            background-position: -498px -37px;
+        }
+
+        div.wrapper nav li.dom a:hover {
+            background-position: -598px -37px;
+        }
+
+        div.wrapper nav fieldset form * {
+            vertical-align: middle
+        }
+
+        div.wrapper nav fieldset form {
+            margin-top: 4 px\9;
+        }
+
+        div.wrapper nav fieldset input {
+            border: 0;
+            width: 180px;
+        }
+
+        div.wrapper nav fieldset button {
+            margin-top: 5px;
+            text-indent: -5000px;
+            border: 0;
+            width: 15px;
+            height: 18px;
+            background: url(images/search.gif) 0 0 no-repeat;
+        }
+
+        div.wrapper aside {
+            width: 230px;
+            float: left;
+            min-height: 500px;
+            background: rgb(196, 210, 214);
+        }
+
+        div.wrapper section {
+            width: 720px;
+            float: right;
+            min-height: 500px;
+            background: rgb(170, 170, 178);
+        }
+
+        div.wrapper footer {
+            height: 50px;
+            clear: both;
+            background: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>html,css</h1>
+            <ul>
+                <li class="home"><a href="#">홈으로</a></li>
+                <li class="cart"><a href="#">장바구니</a></li>
+                <li><a href="#">로그인</a></li>
+            </ul>
+
+            <nav>
+                <ol>
+                    <li class="html"><a href="#">HTML</a></li>
+                    <li class="css"><a href="#">CSS</a></li>
+                    <li class="script"><a href="#">SCRIPT</a></li>
+                    <li class="dom"><a href="#">DOM</a></li>
+                </ol>
+
+                <fieldset>
+                    <legend>검색</legend>
+                    <form action="">
+                        <input type="text" />
+                        <button>검색</button>
+                    </form>
+                </fieldset>
+            </nav>
+        </header>
+
+        <hr />
+
+        <aside>
+            side menu
+        </aside>
+
+        <hr />
+
+        <section>
+            contents
+        </section>
+
+        <hr />
+
+        <footer>
+            footer
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+@media screen and (max-width:1100px) {
+
+
+  /* 최하단 게시판 , 상단으로 버튼 */
+  .fixed_bt{
+    right:5%;
+  }
+  /* Notice FAQ Q&A 자유게시판 */
+  .content_wrap {
+    width: 95%;
+  }
+
+  /* 리뷰 버튼 */
+  .review{
+    width:40%;
+  }
+
+/* 이미지 영역 크기 */
+  .prd_img_wrap{
+    width:100%;
+    height:50%;
+    position: absolute;
+    left:0;
+    margin-left:0;
+  }
+
+
+  /* 텍스트 전체영역 */
+  .prd_primary{
+    margin-left:50px;
+  }
+
+  
+  /* 장바구니 담기 , 상품구매하기 */
+  #xAP{
+    padding:10px;
+  }
+
+
+  /* 갯수 선택버튼 */
+  .prd_select_count{
+    width:40%;
+  
+  }
+
+
+}
+
+@media screen and (max-width:800px) {
+
+  body {
+    min-width: 700px;
+  }
+
+  /* Notice FAQ Q&A 자유게시판 */
+  .content_wrap {
+    width: 100%;
+  }
+
+  /* 제품 디테일 설명 이미지 영역 */
+  .prd_img {
+    width: 100%;
+    position: relative;
+  }
+
+
+  .prd_img_wrap{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    margin-left:0;
+  }
+
+
+  /* 제품 디테일 텍스트 설명 영역 */
+  .prd_primary_wrap {
+    width: 100%;
+    height: 50%;
+    top: 0;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 제품 상세페이지 영역 */
+  .pdp_wrap {
+    margin-top: 520px;
+  }
+
+  /* 메인타이틀 */
+  .prd_name {
+    font-size: 36px;
+  }
+
+  /* 서브텍스트 */
+  .prd_name_en {
+    font-size: 20px;
+  }
+
+  /* 서브텍스트2 */
+  .prd_desc {
+    text-align: left;
+    font-size: 24px;
+  }
+
+  /* footer img 전체영역 ul width값 지정 */
+  .detail_footer .footer_mark {
+    width: 50%;
+  }
+
+  .detail_footer .footer_item {
+    display: block;
+    font-size: 16px;
+  }
+
+  .detail_footer .wa img {
+    margin-right: 50px;
+  }
+
+}

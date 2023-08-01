@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* 문의하기 : 글쓰기 페이지의 반응형 웹을 구현한
+스타일 시트 입니다 */
+@media screen and (max-width:700px){
+  
+  
+  
+  /* 글쓰기 전체영역 크기 지정 */
+  .write_wrap{
+    width:95%;
+    padding:0;
+  }
+
+  /* 문의하기 , 등록버튼 */
+  .write_content_head{
+    align-items: center;
+  }
+
+  /* 문의하기 텍스트 */
+  .wirte_notice{
+    font-size:25px;
+  }
+  
+  
+}

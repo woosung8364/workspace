@@ -1,0 +1,13 @@
+*{
+  margin:0; 
+  padding:0;
+  color: royalblue;
+}
+
+body{
+  background-color: floralwhite;
+}
+
+aside{
+  border:1px solid rebeccapurple;
+}

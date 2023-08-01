@@ -1,0 +1,24 @@
+
+showList();
+
+
+function memberList() {
+  const url = '../members.jsp';
+  let promise = fetch(url);
+  return promise.then( response => response.json());
+}
+
+
+async function showList() {
+  let array = await memberList();
+  const view = document.querySelector('#result');
+  console.log(array);
+  if (array) {
+    array.forEach(member => {
+      console.log(member);
+      //  돔 처리는 여러분이 하세요..
+    });
+
+  }
+
+}

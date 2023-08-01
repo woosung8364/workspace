@@ -1,0 +1,26 @@
+package ezen.mvcframework.web.member.controller;
+
+import java.util.Map;
+import ezen.mvcframework.core.web.controller.WebController;
+import ezen.mvcframework.domain.common.database.DaoFactory;
+import ezen.mvcframework.domain.member.dao.MemberDao;
+import ezen.mvcframework.domain.member.dto.Member;
+
+/**
+ * 아이디 중복 체크 세부 컨트롤러
+ */
+public class IdCheckController implements WebController {
+	
+	@Override
+	public String process(Map<String, String> paramMap, Map<String, Object> model) {
+		String viewName = "member/id-check";
+		String id = paramMap.get("id");
+		MemberDao memberDao = DaoFactory.getInstance().getMemberDao();
+		memberDao.findById(id);
+		
+		// 모델에 회원정보 저장
+		model.put("member", member);
+		return viewName;
+	}
+
+}
