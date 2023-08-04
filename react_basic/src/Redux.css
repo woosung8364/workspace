@@ -1,0 +1,10 @@
+#grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#contatiner , #root ,  
+#container div{
+  border:5px solid red;
+  margin : 10px;
+}

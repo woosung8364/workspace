@@ -3,7 +3,7 @@ import React, { useState,useReducer} from "react";
 export default App2;
 
 function App2(){
-
+  const number = null;
   const [count , countDispatch] = useReducer(countReducer,0);
 
 
