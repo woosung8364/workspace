@@ -1,0 +1,329 @@
+package ezen.shoppingmall.domain.article.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import ezen.shoppingmall.domain.article.dto.Board;
+import ezen.shoppingmall.domain.common.factory.DaoFactory;
+
+/**
+ * RDB를 통해 게시글 저장 및 목록 구현체
+ * @author 임지연
+ */
+public class JdbcArticleDao  implements ArticleDao {
+	
+	/**
+	 * 신규글 등록
+	 */
+	public boolean create(Connection connection,  Board board){
+		boolean success = false;
+		StringBuilder sb = new StringBuilder();
+		sb.append(" INSERT INTO board (")
+		  .append("    board_no,")
+		  .append("    member_id,")
+		  .append("    board_category,")
+		  .append("    board_title,")
+		  .append("    board_contents")
+		  .append(" ) VALUES (")
+		  .append("   board_no_seq.NEXTVAL,")
+		  .append("   ?,")
+		  .append("   ?,")
+		  .append("   ?,")
+		  .append("   ?")
+		  .append(")");
+		
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = connection.prepareStatement(sb.toString());
+			pstmt.setString(1, board.getMemberId());
+			pstmt.setString(2, board.getCategory());
+			pstmt.setString(3, board.getTitle());
+			pstmt.setString(4, board.getContent());
+			pstmt.executeUpdate();
+			success = true;
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+			} catch (Exception e) {}
+		}
+		return success;
+	}
+	
+	
+	/**
+	 * 게시글 카운트 메소드
+	 */
+	@Override
+	public int getCountAll(Connection connection) {
+		int count = 0;
+		StringBuilder sb = new StringBuilder();
+		sb.append(" SELECT COUNT(*) cnt")
+		  .append(" FROM board")
+		  .append(" WHERE board_category!= 'normal'");
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = connection.prepareStatement(sb.toString());
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt("cnt");
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+			} catch (Exception e) {}
+		}
+		return count;
+		
+		
+	}
+	
+	
+	/**
+	 * 카테고리별 게시글 카운트 메소드
+	 */
+	@Override
+	public int getCategoryCountAll(Connection connection, String category) {
+		int count = 0;
+		StringBuilder sb = new StringBuilder();
+		sb.append(" SELECT COUNT(*) cnt")
+		  .append(" FROM board")
+		  .append(" WHERE board_category= ?");
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = connection.prepareStatement(sb.toString());
+			pstmt.setString(1, category);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt("cnt");
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+			} catch (Exception e) {}
+		}
+		return count;
+		
+		
+	}
+	
+	/**
+	 * 게시글 전체 목록
+	 */
+	@Override
+	public List<Board> findByAll(Connection connection, int requestPage, int elementSize) {
+		List<Board>  list = null;
+		StringBuilder sb = new StringBuilder();
+		sb.append(" SELECT page, id, board_updated, title, member_name, category")
+		.append(" FROM ( SELECT ceil(ROWNUM / ?) page, m1.board_no id, to_char(m1.board_updated, 'yyyy-MM-DD HH24:MI') board_updated,")
+		.append(" m1.board_title title, m2.member_name member_name, m1.board_category category")
+		.append("                 FROM board m1")
+		.append("                     JOIN member m2 ON m1.member_id = m2.member_id")
+		.append("                 WHERE m1.board_category != 'normal'")
+		.append("                 ORDER BY m1.board_no)")
+		.append(" WHERE  page = ?");
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = connection.prepareStatement(sb.toString());
+			pstmt.setInt(1, elementSize);
+			pstmt.setInt(2, requestPage);
+			rs = pstmt.executeQuery();
+			list = new ArrayList<Board>();
+			while (rs.next()) {			
+				int id = rs.getInt("id");
+				String writeDate = rs.getString("board_updated");
+				String title = rs.getString("title");
+				String category = rs.getString("category");
+				String memberName = rs.getString("member_name");
+				Board board = new Board();
+				board.setNo(id);
+				board.setWriteDate(writeDate);
+				board.setTitle(title);
+				board.setMemberName(memberName);
+				board.setCategory(category);
+				list.add(board);
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+			} catch (Exception e) {}
+		}
+		return list;
+	}
+	
+	
+	/**
+	 * 카테고리별 게시글 전체 목록
+	 */
+	@Override
+	public List<Board> findAllByCategory(Connection connection, int requestPage, int elementSize, String category) {
+		List<Board>  list = null;
+		StringBuilder sb = new StringBuilder();
+		sb.append(" SELECT page, id, board_updated, title, member_name, category, content")
+		.append(" FROM ( SELECT ceil(ROWNUM / ?) page, m1.board_no id, to_char(m1.board_updated, 'yyyy-MM-DD HH24:MI') board_updated,")
+		.append(" m1.board_title title, m2.member_name member_name, m1.board_category category, m1.board_contents content")
+		.append("                 FROM board m1")
+		.append("                     JOIN member m2 ON m1.member_id = m2.member_id")
+		.append("                 WHERE m1.board_category =?")
+		.append("                 ORDER BY m1.board_no)")
+		.append(" WHERE page = ?");
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = connection.prepareStatement(sb.toString());
+			pstmt.setInt(1, elementSize);
+			pstmt.setInt(3, requestPage);
+			pstmt.setString(2, category);
+			rs = pstmt.executeQuery();
+			list = new ArrayList<Board>();
+			while (rs.next()) {			
+				int id = rs.getInt("id");
+				String writeDate = rs.getString("board_updated");
+				String title = rs.getString("title");
+				String categoryee = rs.getString("category");
+				String memberName = rs.getString("member_name");
+				String content = rs.getString("content");
+				Board board = new Board();
+				board.setNo(id);
+				board.setWriteDate(writeDate);
+				board.setTitle(title);
+				board.setMemberName(memberName);
+				board.setCategory(categoryee);
+				board.setContent(content);
+				list.add(board);
+
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+			} catch (Exception e) {}
+		}
+		return list;
+	}
+
+	/**
+	 * 요청 회원의 게시글 카운트 메소드
+	 */
+	@Override
+	public int getMyArticleCount(Connection connection, String memberId) {
+		int count = 0;
+		StringBuilder sb = new StringBuilder();
+		sb.append(" SELECT COUNT(*) cnt")
+		  .append(" FROM board")
+		  .append(" WHERE member_id= ?");
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = connection.prepareStatement(sb.toString());
+			pstmt.setString(1, memberId);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt("cnt");
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+			} catch (Exception e) {}
+		}
+		return count;
+	}
+
+	/**
+	 * 회원의 요청 페이지, 페이지당 보여지는 목록 갯수에 따른 목록 반환
+	 */
+	@Override
+	public List<Board> findMyArticles(Connection connection, int requestPage, int elementSize, String memberId) {
+		List<Board>  list = null;
+		StringBuilder sb = new StringBuilder();
+		sb.append(" SELECT page, id, board_updated, title, member_name, category")
+		.append(" FROM ( SELECT ceil(ROWNUM / ?) page, m1.board_no id, to_char(m1.board_updated, 'yyyy-MM-DD HH24:MI') board_updated,")
+		.append(" m1.board_title title, m2.member_name member_name, m1.board_category category")
+		.append("                 FROM board m1")
+		.append("                     JOIN member m2 ON m1.member_id = m2.member_id")
+		.append("                 WHERE m1.member_id =?")
+		.append("                 ORDER BY m1.board_no)")
+		.append(" WHERE page = ?");
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = connection.prepareStatement(sb.toString());
+			pstmt.setInt(1, elementSize);
+			pstmt.setInt(3, requestPage);
+			pstmt.setString(2, memberId);
+			rs = pstmt.executeQuery();
+			list = new ArrayList<Board>();
+			while (rs.next()) {			
+				int id = rs.getInt("id");
+				String writeDate = rs.getString("board_updated");
+				String title = rs.getString("title");
+				String categoryee = rs.getString("category");
+				String memberName = rs.getString("member_name");
+				Board board = new Board();
+				board.setNo(id);
+				board.setWriteDate(writeDate);
+				board.setTitle(title);
+				board.setMemberName(memberName);
+				board.setCategory(categoryee);
+				list.add(board);
+
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+			} catch (Exception e) {}
+		}
+		return list;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

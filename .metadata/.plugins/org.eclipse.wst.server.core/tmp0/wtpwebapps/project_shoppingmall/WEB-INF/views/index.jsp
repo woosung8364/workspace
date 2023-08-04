@@ -306,7 +306,8 @@
 	<div class="culture">
 		<!-- 컨텐츠 전체영역 -->
 		<div class="content">
-			<a href="#" class="content_img"> <img src="/img/hera_logo2.png" alt="">
+			<a href="#" class="content_img"> <img src="/img/hera_logo2.png"
+				alt="">
 			</a>
 			<!-- 서브 텍스트1 -->
 			<p class="culture_txt">

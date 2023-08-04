@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.io.DataOutput"/>
-    <fullyQualifiedTypeName name="ezen.network.server.EchoHandler"/>
-    <fullyQualifiedTypeName name="java.util.Collection"/>
     <fullyQualifiedTypeName name="ezen.network.server.ChatServer"/>
     <fullyQualifiedTypeName name="ezen.network.server.ChatHandler"/>
     <fullyQualifiedTypeName name="ezen.chat.client.ChatClient"/>
@@ -60,4 +57,7 @@
     <fullyQualifiedTypeName name="java.util.Calendar"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="ezen.mvcframework.core.web.controller.WebController"/>
+    <fullyQualifiedTypeName name="ezen.shoppingmall.domain.common.factory.DaoFactory"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="ezen.shoppingmall.web.mvc.controller.HttpController"/>
 </qualifiedTypeNameHistroy>
