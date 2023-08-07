@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+	<property name="LOGS_ABSOLUTE_PATH" value="./log" /> <!-- 로그 파일 위치 -->
+	<!-- Encoder 로그 메시지 출력 형식 설정 -->
+	<!-- 로그를 기록한 날짜 , 쓰레드 종류 , 로거 레벨 , 로깅하고있는 파일 이름과 라인번호 , 로깅메시지 -->
+	<property name="LOG_PATTERN"
+		value="[%d{yyyy-MM-dd HH:mm:ss}][%thread][%-5level]\(%F:%L\) : %msg%n" />
+
+
+	<!-- 콘솔 출력 -->
+	<!-- appender 라는 클래스의 식별자이름 : CONSOLE -->
+	<appender name="CONSOLE"
+		class="ch.qos.logback.core.ConsoleAppender">
+
+		<!-- 위에서 설정한 LOG_PATTERN 을 EL태그로 작성됨 -->
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern> <!-- 로그 출력 패턴 -->
+		</encoder>
+	</appender>
+
+	<!-- 파일 출력 -->
+	<!-- LOGBACK 라이브러리의 클래스인 RollingFileAppender 사용 -->
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOGS_ABSOLUTE_PATH}/application.log</file> <!-- 파일 경로 및 파일 이름 -->
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern> <!-- 로그 출력 패턴 -->
+		</encoder>
+
+		<!-- LOGBACK 라이브러리의 클래스인 TimeBasedRollingPolicy 사용 -->
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> <!-- 시간으로 파일 분할 정책 -->
+			<fileNamePattern>${LOGS_ABSOLUTE_PATH}/application.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern> <!-- 분할 파일 이름 패턴 -->
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize> <!-- 분할 파일 크기 기준 -->
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>100</maxHistory> <!-- 분할된 파일의 최대 개수 -->
+		</rollingPolicy>
+	</appender>
+
+
+	<!-- 로그 5단계 TRACE , DEBUG , INFO , WARN , ERROR -->
+	<!-- 로그 출력 기준 : 설정한 등급 이하의 로그는 출력되지 않음 -->
+	<root level="debug">
+		<!--  콘솔창에만 출력되도록 File 출력부분을 주석하였음 -->
+		<!-- console 주석시 File에만 기록됨 -->
+		<appender-ref ref="CONSOLE" />
+	
+		<!-- <appender-ref ref="FILE" />  -->
+	</root>
+
+	
+
+</configuration>

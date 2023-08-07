@@ -1,0 +1,12 @@
+[2023-08-07 15:58:10][main][DEBUG](loggingExample.java:13) : debug 기록
+[2023-08-07 15:58:10][main][INFO ](loggingExample.java:14) : info 기록
+[2023-08-07 15:58:10][main][WARN ](loggingExample.java:15) : warn 기록
+[2023-08-07 15:58:10][main][ERROR](loggingExample.java:16) : error 기록
+[2023-08-07 16:19:32][main][INFO ](loggingExample.java:16) : info 기록
+[2023-08-07 16:19:32][main][WARN ](loggingExample.java:17) : warn 기록
+[2023-08-07 16:19:32][main][ERROR](loggingExample.java:18) : error 기록
+[2023-08-07 16:21:56][main][INFO ](loggingExample.java:17) : info 기록
+[2023-08-07 16:21:56][main][WARN ](loggingExample.java:18) : warn 기록
+[2023-08-07 16:21:56][main][ERROR](loggingExample.java:19) : error 기록
+[2023-08-07 16:38:39][main][WARN ](loggingExample.java:18) : warn 기록
+[2023-08-07 16:38:39][main][ERROR](loggingExample.java:19) : error 기록
