@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="ezen.network.server.ChatHandler"/>
-    <fullyQualifiedTypeName name="ezen.chat.client.ChatClient"/>
-    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
-    <fullyQualifiedTypeName name="ezen.chat.client.Validator"/>
-    <fullyQualifiedTypeName name="java.awt.event.WindowAdapter"/>
-    <fullyQualifiedTypeName name="ezen.chat.client.ChatFrame"/>
-    <fullyQualifiedTypeName name="ezen.chat.server.ChatHandler"/>
-    <fullyQualifiedTypeName name="ezen.chat.server.ChatServer"/>
-    <fullyQualifiedTypeName name="java.awt.Choice"/>
-    <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
-    <fullyQualifiedTypeName name="ezen.chat.protocol.MessageType"/>
-    <fullyQualifiedTypeName name="java.awt.event.ItemListener"/>
-    <fullyQualifiedTypeName name="java.awt.event.ItemEvent"/>
-    <fullyQualifiedTypeName name="ezen.pack1.A"/>
-    <fullyQualifiedTypeName name="java.awt.Frame"/>
-    <fullyQualifiedTypeName name="java.lang.Runnable"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="ezen.oop.lambda.Calculable"/>
     <fullyQualifiedTypeName name="ezen.jdbc.EzenDriver"/>
@@ -53,11 +37,27 @@
     <fullyQualifiedTypeName name="ezen.mvcframework.core.web.controller.HttpController"/>
     <fullyQualifiedTypeName name="ezen.mvcproject.domain.member.dto.Member"/>
     <fullyQualifiedTypeName name="java.util.Calendar"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="ezen.mvcframework.core.web.controller.WebController"/>
     <fullyQualifiedTypeName name="ezen.shoppingmall.domain.common.factory.DaoFactory"/>
     <fullyQualifiedTypeName name="ezen.shoppingmall.web.mvc.controller.HttpController"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="java.lang.Class"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeAll"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterEach"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterAll"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.DisplayName"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Disabled"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.TestMethodOrder"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Method"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.MethodOrderer"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.MethodOrderer.OrderAnnotation"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Order"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
+    <fullyQualifiedTypeName name="gradle_basic.SomeServiceImpl"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="logging_basic.loggingExample"/>
+    <fullyQualifiedTypeName name="java.util.logging.Logger"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
 </qualifiedTypeNameHistroy>

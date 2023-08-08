@@ -31,6 +31,10 @@ dependencies {
 	testImplementation 'ch.qos.logback:logback-classic:1.4.5'
     
     
+    // lombok 라이브러리 8월 8일 추가됨
+    // getter ,setter , toString 등 자동으로~
+	compileOnly 'org.projectlombok:lombok:1.18.28'
+    
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
 
