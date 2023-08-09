@@ -51,11 +51,10 @@ public interface EmployeeMapper2 {
 			"		ORDER BY hire_date ASC")
 	public Employee findById(int id) throws RuntimeException;
 	
-	
-	
 //	@Insert()
 //	@Delete()
 //	@Update()
+	
 }
 
 

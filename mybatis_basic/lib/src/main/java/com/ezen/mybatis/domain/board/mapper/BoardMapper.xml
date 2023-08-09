@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+                        
+<!-- 네임스페이스(사용영역) 설정 -->
+<!-- 패키지 기능 : select 이름이 중복되어 충돌되는걸 방지해준다 -->
+<!-- mapper 안의 select 태그들을 해당하는 경로로 저장하겠다~  -->
+<mapper namespace="com.ezen.mybatis.domain.board.mapper.BoardMapper">
+	
+	
+	<!--  오늘 날짜 조회 -->
+	<select id="findToDate" resultType="string">
+		SELECT sysdate "today"
+		FROM dual
+	</select>
+	
+	
+	<!-- 게시판 등록 -->
+	<insert id="create" parameterType="Board">
+		INSERT INTO member 
+		            (
+		            board_id  "boardId",
+		            category "category",
+		            title "title" ,
+		            description "description"
+		            )
+		              
+		VALUES     (
+		            #{boardId} ,
+		            #{category} ,
+		            #{title} ,
+		            #{description}
+		           )
+	</insert>
+	
+	
+	<!-- select 태그를 이용하여 전체사원 조회를 위한 SQL 매핑 -->
+	<select id="findAll" resultType="Board" >
+		SELECT board_id                  			AS "boardId" , 
+		       category                 			AS "category" , 
+		       title                				AS "title" , 
+		       description               			AS "description" 
+		FROM   board
+		ORDER  BY regdate ASC
+	</select>
+	
+	
+</mapper>

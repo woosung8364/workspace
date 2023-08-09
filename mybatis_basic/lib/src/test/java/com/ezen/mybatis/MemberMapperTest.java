@@ -16,6 +16,8 @@ import org.junit.jupiter.api.Test;
 
 import com.ezen.mybatis.domain.employee.dto.Employee;
 import com.ezen.mybatis.domain.employee.mapper.EmployeeMapper;
+import com.ezen.mybatis.domain.member.MemberDao;
+import com.ezen.mybatis.domain.member.dto.Member;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -37,31 +39,40 @@ public class MemberMapperTest {
 	}
 	
 	@Test
-	public void findAllTest(){
+	public void createTest(){
 		
-		System.out.println("==================== 전체멤버 조회 ========================");
+		System.out.println("==================== 새로운 멤버 생성 ========================");
+		
+
+		Member member = new Member();
+		member.setId("song8364");
+		member.setName("송우성");
+		member.setEmail("song8364@naver.com");
+		member.setPasswd("seo8364");
+		member.setRegdate("20230809");
 		
 //		myBatis 에서 mapper proxy 라는 EmployeeMapper 인터페이스의 구현체 클래스를 만들어서 리턴
-		EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
+		MemberDao mapper = sqlSession.getMapper(MemberDao.class);
+		mapper.create(member);
 		
-//		{} : 값 , mapper 변수의 값을 로그로 출력하는 코드
-		log.debug("{}", mapper);
 		
-		List<Employee> list = mapper.findAll();
-		for (Employee employee : list) {
-			System.out.println(employee);
-		}
+//		{} : 값 , mapper 변수의 값을 로그로 출력하는 코드	
+		log.debug("멤버등록 완료 : {}", member);
+		
+		
+		
 		sqlSession.close();
+
 	}
 	
 	@Test
-	public void findByLastNameTest(){
-		System.out.println("==================== 사원이름으로 사원조회 ========================");
-		EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
-		List<Employee> findEmployees = mapper.findByLastName("E");
+	public void findByAllTest(){
+		System.out.println("==================== 전체 멤버 조회 ========================");
+		MemberDao mapper = sqlSession.getMapper(MemberDao.class);
+		List<Member> findMembers = mapper.findByAll();
 //		자바 스크립트식 forEach 사용하기
-		findEmployees.forEach( (employee)  ->{
-			log.debug("검색된 사원 : {}",employee);
+		findMembers.forEach( (member)  ->{
+			log.debug("검색된 사원 : {}",member);
 		});
 	
 		sqlSession.close();
@@ -69,28 +80,28 @@ public class MemberMapperTest {
 	
 	
 	@Test
-	public void createTest(){
-		System.out.println("==================== 사원등록 ========================");
-		
-//		객체에 속성들 설정
-		Employee emp = new Employee();
-		emp.setFirstName("박사님을아세요?");
-		emp.setLastName("홍");
-		emp.setEmail("hong@gmail.com");
-		emp.setPhoneNumber("0070");
-		emp.setHireDate("2023-01-11");
-		emp.setJobId("IT_PROG");
-		emp.setSalary(5000011);
-		emp.setManagerId(200);
-		emp.setDepartmentId(60);
-		
-		EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
-//		설정한 객체를 SQL 쿼리를 만들어둔 CREATE 쿼리를 통해 데이타베이스로 요청하기
-		mapper.create(emp);
-		log.debug("사원등록 완료 : {}", emp);
+	public void findByIdTest(String id){
+		System.out.println("==================== 전체 멤버 조회 ========================");
+		MemberDao mapper = sqlSession.getMapper(MemberDao.class);
+		Member findId = mapper.findById(id);
+		log.debug("id로 검색된 멤버 : {}" , findId);
+//		자바 스크립트식 forEach 사용하기
 	
 		sqlSession.close();
 	}
+	
+	
+	@Test
+	public void findByUserTest(String id , String passwd){
+		System.out.println("==================== 전체 멤버 조회 ========================");
+		MemberDao mapper = sqlSession.getMapper(MemberDao.class);
+		Member findUser = mapper.findByUser(id , passwd);
+		log.debug("id와 pw로 검색된 멤버 : {}" , findUser);
+//		자바 스크립트식 forEach 사용하기
+	
+		sqlSession.close();
+	}
+	
 	
 	@AfterEach
 	public void destory() {

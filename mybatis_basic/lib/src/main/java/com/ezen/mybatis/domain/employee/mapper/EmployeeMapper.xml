@@ -3,19 +3,15 @@
                         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
                         
 <!-- 네임스페이스(사용영역) 설정 -->
-<!-- 패키지 기능 : select 이름이 중복되어 충돌되는걸 방지해준다 -->
-<!-- mapper 안의 select 태그들을 해당하는 경로로 저장하겠다~  -->
 <mapper namespace="com.ezen.mybatis.domain.employee.mapper.EmployeeMapper">
-	
-	
-	<select id="findToDate" resultType="string">
+
+	<select id="findToday" resultType="string">
 		SELECT sysdate "today"
 		FROM dual
 	</select>
 	
-	
 	<!-- select 태그를 이용하여 전체사원 조회를 위한 SQL 매핑 -->
-	<select id="findAll" resultType="com.ezen.mybatis.domain.employee.dto.Employee" >
+	<select id="findAll" resultType="Employee" >
 		SELECT employee_id                      AS "id", 
 		       first_name                       AS "firstName", 
 		       last_name                        AS "lastName", 
@@ -58,8 +54,8 @@
 		       TO_CHAR(hire_date, 'YYYY-MM-DD') "hireDate", 
 		       salary                           "salary" 
 		FROM   employees 
-		WHERE  salary BETWEEN #{min} AND #{max} 
-		<!-- WHERE salary &gt;= #{min} AND salary &lt;= #{max} -->
+		<!-- WHERE  salary BETWEEN #{min} AND #{max} --> 
+		WHERE salary &gt;= #{min} AND salary &lt;= #{max}
 	</select>
 	
 	<!-- 성(last_name)으로 사원 와일드카드 검색(like 검색) -->
@@ -72,7 +68,7 @@
 		       TO_CHAR(hire_date, 'YYYY-MM-DD') "hireDate", 
 		       salary                           "salary" 
 		FROM   employees 
-		WHERE  UPPER(last_name) LIKE '%' || UPPER(#{lastName}) || '%'
+		WHERE  UPPER(last_name) LIKE '%' || #{lastName} || '%' 
 	</select>
 	
 	<!-- HashMap을 이용한 검색 : 조인 시 사용 -->
@@ -88,10 +84,6 @@
 	
 	<!-- 자주 사용되고, 자바빈의 속성이름과 테이블 컬럼이름이 다른 경우 resultMap 선언 -->
 	<resultMap  id="employee" type="com.ezen.mybatis.domain.employee.dto.Employee">
-	<!-- 자바는 카멜표기법 , SQL 은 스네이크 표기법을 쓰기 때문에 데이터베이스의 컬럼명과 자바에서의 변수명이 서로 일치하지 않을시 -->
-	<!-- resultMap 태그를 통하여 칼럼명과 변수명을 일치하도록 선언할 수 있다 -->
-	<!-- 위에서 하던것처럼 별칭을 통하여 관리해도 무방하다 -->
-	<!-- property = 자바변수명 , cloumn = sql 컬럼이름  -->
 		<result property="id"           column="employee_id"/>
 		<result property="email"        column="email"/>
 		<result property="phoneNumber"  column="phone_number"/>
@@ -120,7 +112,7 @@
 		             job_id, 
 		             salary, 
 		             manager_id, 
-		             department_id)  
+		             department_id) 
 		VALUES     (employees_seq.nextval, 
 		            #{firstName}, 
 		            #{lastName}, 
@@ -166,13 +158,16 @@
 		<if test="type != null">
 			<choose>
 				<when test="type == 'id'">
-				WHERE employee_id = #{value}
+					WHERE employee_id = #{value}
 				</when>
 				<when test="type == 'name'">
-				WHERE first_name like '%' || #{value}
+					WHERE first_name like '%' || #{value}
 				</when>
 				<otherwise></otherwise>
 			</choose>
 		</if>
 	</select>
+	
 </mapper>
+
+
