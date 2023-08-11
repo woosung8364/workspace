@@ -2,4 +2,5 @@ GitRepositoriesView.GitDirectories=C\:\\ezen-fullstack\\workspace\\.git;C\:\\eze
 GitRepositoriesView.GitDirectories.relative=.git;project_shoppingmall\\.git;
 RepositoryGroups.uuids=
 RepositorySearchDialogSearchPath=C\:\\ezen-fullstack\\workspace\\project_shoppingmall
+core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

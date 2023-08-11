@@ -56,7 +56,7 @@ SqlSession sqlSession;
 //		article 객체에 값들 지정
 		Member member = new Member();
 		ArticleDTO article = new ArticleDTO();
-		article.setArticleId(1252);
+		article.setArticleId(1254);
 		article.setBoardId(10);
 		article.setSubject("오늘 칼바람 몇시?");
 		article.setContent("8시 ㄱ?");
@@ -68,7 +68,6 @@ SqlSession sqlSession;
 		article.setLevelNum(1);
 		
 		
-//		myBatis 에서 mapper proxy 라는 EmployeeMapper 인터페이스의 구현체 클래스를 만들어서 리턴
 		ArticleMapper mapper = sqlSession.getMapper(ArticleMapper.class);
 		mapper.create(article);
 		
@@ -117,6 +116,7 @@ SqlSession sqlSession;
 	
 	@Test
 	@DisplayName("현재 페이지의 게시글 목록")
+//	미구현됨
 	@Disabled
 	public void findByAllTest(PageParams pageParams){
 		System.out.println("==================== 현재 페이지의 게시글 목록 ========================");
@@ -132,6 +132,47 @@ SqlSession sqlSession;
 		sqlSession.close();
 	}
 	
+	
+//	댓글 생성에 대한 테스트
+	
+	
+	@Test
+	@DisplayName("댓글 생성")
+	public void createArticle() {
+		System.out.println("==================== 게시글에서 댓글쓰기 ========================");
+		
+//		articleDTO 객체 생성
+		ArticleDTO articleDTO = new ArticleDTO();
+		articleDTO.setArticleId(1211);
+		articleDTO.setBoardId(30);
+		articleDTO.setSubject("오늘 아레나 몇시?");
+		articleDTO.setContent("10시 ㄱ?");
+		articleDTO.setWriter("song8364");
+		articleDTO.setRegdate("2023-08-11");
+		articleDTO.setHitcount(3000);
+		articleDTO.setPasswd("4321");
+		articleDTO.setGroupNum(1); 
+		articleDTO.setLevelNum(1);
+		
+		ArticleMapper mapper = sqlSession.getMapper(ArticleMapper.class);
+		mapper.create(articleDTO);
+		
+		log.info("댓글 생성이 정상적으로 완료되었습니다 : {} " , articleDTO);
+		sqlSession.close();
+	}
+	
+	@Test
+	@DisplayName("댓글 답글 생성")
+	public void createSubArticle() {
+		System.out.println("==================== 게시글에서 댓글 답글 쓰기 ========================");
+		
+
+		ArticleMapper mapper = sqlSession.getMapper(ArticleMapper.class);
+		mapper.createSubArticle();
+		
+		log.info("대댓글 생성이 정상적으로 완료되었습니다");
+		sqlSession.close();
+	}
 	
 	@AfterEach
 	public void destory() {

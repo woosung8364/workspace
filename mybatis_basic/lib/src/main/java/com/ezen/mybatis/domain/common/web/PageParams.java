@@ -23,9 +23,10 @@ public class PageParams {
 	private int elementSize;    /** 페이지에 보여지는 목록 갯수 */
 	private int pageSize;       /** 페이지에 보여지는 페이지 갯수 */
 	private int requestPage;    /** 사용자 요청 페이지 */
+	private int rowCount;
 	
 	public PageParams() {
-		this(10, 5, 1);
+		this(10, 5, 1 , 0);
 	}
 	
 	

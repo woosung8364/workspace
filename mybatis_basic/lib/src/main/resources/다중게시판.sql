@@ -1,15 +1,15 @@
 /* 
- * ´ÙÁß °Ô½ÃÆÇ ±¸ÃàÀ» À§ÇÑ SQL
- * employees Å×ÀÌºí°ú departments Å×ÀÌºíÀÇ 1 : ´Ù °ü°è À¯»ç
+ * ë‹¤ì¤‘ ê²Œì‹œíŒ êµ¬ì¶•ì„ ìœ„í•œ SQL
+ * employees í…Œì´ë¸”ê³¼ departments í…Œì´ë¸”ì˜ 1 : ë‹¤ ê´€ê³„ ìœ ì‚¬
  */
 DROP TABLE board;
 
---#1. °Ô½ÃÆÇ Å×ÀÌºí »ı¼º
+--#1. ê²Œì‹œíŒ í…Œì´ë¸” ìƒì„±
 CREATE TABLE board(
-    board_id       NUMBER(20)           NOT NULL,    -- °Ô½ÃÆÇ ½Äº°¹øÈ£
-    category       NUMBER(10)           NOT NULL,    -- °Ô½ÃÆÇ Ä«Å×°í¸®
-    title               VARCHAR2(200)     NOT NULL,    -- °Ô½ÃÆÇ ÀÌ¸§
-    description  VARCHAR2(400)                            -- °Ô½ÃÆÇ »ó¼¼¼³¸í
+    board_id       NUMBER(20)           NOT NULL,    -- ê²Œì‹œíŒ ì‹ë³„ë²ˆí˜¸
+    category       NUMBER(10)           NOT NULL,    -- ê²Œì‹œíŒ ì¹´í…Œê³ ë¦¬
+    title               VARCHAR2(200)     NOT NULL,    -- ê²Œì‹œíŒ ì´ë¦„
+    description  VARCHAR2(400)                            -- ê²Œì‹œíŒ ìƒì„¸ì„¤ëª…
 );
 
 DROP SEQUENCE board_id_seq;
@@ -19,50 +19,50 @@ CREATE SEQUENCE board_id_seq
     INCREMENT BY 10;
 
 
---#2. °Ô½ÃÆÇ Å×ÀÌºí Á¦¾àÁ¶°Ç Ãß°¡
+--#2. ê²Œì‹œíŒ í…Œì´ë¸” ì œì•½ì¡°ê±´ ì¶”ê°€
 ALTER TABLE board
 	ADD CONSTRAINT board_id_pk PRIMARY KEY(board_id);
 
 
---#3. Å×½ºÆ® °Ô½ÃÆÇ µî·Ï
+--#3. í…ŒìŠ¤íŠ¸ ê²Œì‹œíŒ ë“±ë¡
 INSERT INTO board(board_id, category, title, description)
-VALUES (board_id_seq.NEXTVAL, 1, 'ÀÚÀ¯°Ô½ÃÆÇ', '´©±¸³ª ÀÚÀ¯·Ó°Ô ±ÛÀ» ¾²½Ç ¼ö ÀÖ´Â ÀÚÀ¯°Ô½ÃÆÇÀÔ´Ï´Ù.');
+VALUES (board_id_seq.NEXTVAL, 1, 'ììœ ê²Œì‹œíŒ', 'ëˆ„êµ¬ë‚˜ ììœ ë¡­ê²Œ ê¸€ì„ ì“°ì‹¤ ìˆ˜ ìˆëŠ” ììœ ê²Œì‹œíŒì…ë‹ˆë‹¤.');
 
 INSERT INTO board(board_id, category, title, description)
-VALUES (board_id_seq.NEXTVAL, 1, '¸¸¶¥ÀÚ·á½Ç', 'ÀÌ°Í Àú°Í ¾ø´Â°Ô ¾ø´Â ¸¸¶¥ ÀÚ·á½ÇÀÔ´Ï´Ù.');
+VALUES (board_id_seq.NEXTVAL, 1, 'ë§Œë•…ìë£Œì‹¤', 'ì´ê²ƒ ì €ê²ƒ ì—†ëŠ”ê²Œ ì—†ëŠ” ë§Œë•… ìë£Œì‹¤ì…ë‹ˆë‹¤.');
 
 INSERT INTO board(board_id, category, title, description)
-VALUES (board_id_seq.NEXTVAL, 2, '¹¯°í´äÇÏ±â', 'IT °ü·Ã ¹«¾ùÀÌµç ¹°¾î º¸¼¼¿ä.');
+VALUES (board_id_seq.NEXTVAL, 2, 'ë¬»ê³ ë‹µí•˜ê¸°', 'IT ê´€ë ¨ ë¬´ì—‡ì´ë“  ë¬¼ì–´ ë³´ì„¸ìš”.');
 
 INSERT INTO board(board_id, category, title, description)
-VALUES (board_id_seq.NEXTVAL, 2, '°øÁö»çÇ×', '°øÁö»çÇ×ÀÔ´Ï´Ù.');
+VALUES (board_id_seq.NEXTVAL, 2, 'ê³µì§€ì‚¬í•­', 'ê³µì§€ì‚¬í•­ì…ë‹ˆë‹¤.');
 
 COMMIT;
 
--- °Ô½ÃÆÇ ÀüÃ¼ ¸ñ·Ï Á¶È¸
+-- ê²Œì‹œíŒ ì „ì²´ ëª©ë¡ ì¡°íšŒ
 SELECT board_id, category, title, description
 FROM   board
 ORDER BY board_id;
 
 
---#4. °Ô½Ã±Û Å×ÀÌºí »ı¼º
+--#4. ê²Œì‹œê¸€ í…Œì´ë¸” ìƒì„±
 DROP TABLE article;
 
 CREATE TABLE article (
-    article_id      NUMBER(20)        NOT NULL,                             -- °Ô½Ã±Û ½Äº°¹øÈ£
-    board_id      NUMBER(20)        NOT NULL,                             -- °Ô½Ã±Û ¼Ò¼Ó °Ô½ÃÆÇ¹øÈ£
-    writer           VARCHAR2(20)     NOT NULL,                            -- °Ô½Ã±Û ÀÛ¼ºÀÚ ¾ÆÀÌµğ
-    subject        VARCHAR2(400)    NOT NULL,                           -- °Ô½Ã±Û Á¦¸ñ
-    content        VARCHAR2(4000)   NOT NULL,                          -- °Ô½Ã±Û ³»¿ë
-    regdate        DATE      DEFAULT  SYSDATE  NOT NULL,      -- °Ô½Ã±Û µî·ÏÀÏÀÚ
-    hitcount       NUMBER(20)        DEFAULT 0 NOT NULL,         -- °Ô½Ã±Û Á¶È¸¼ö
-    passwd        VARCHAR2(8)      NOT NULL,                             -- °Ô½Ã±Û ºñ¹Ğ¹øÈ£
-    group_no      NUMBER(7)        NOT NULL,                             -- °èÃşÇü °Ô½ÃÆÇ ±¸Á¶¸¦ À§ÇÑ °Ô½Ã±Û ±×·ì¹øÈ£
-    level_no      NUMBER(2)        NOT NULL,                               -- °èÃşÇü °Ô½ÃÆÇ ±¸Á¶¸¦ À§ÇÑ ±×·ì³» °Ô½Ã±Û ·¹º§
-    order_no      NUMBER(3)        NOT NULL                              -- °èÃşÇü °Ô½ÃÆÇ ±¸Á¶¸¦ À§ÇÑ ±×·ì³» °Ô½Ã±Û ¼ø¼­
+    article_id      NUMBER(20)        NOT NULL,                             -- ê²Œì‹œê¸€ ì‹ë³„ë²ˆí˜¸
+    board_id      NUMBER(20)        NOT NULL,                             -- ê²Œì‹œê¸€ ì†Œì† ê²Œì‹œíŒë²ˆí˜¸
+    writer           VARCHAR2(20)     NOT NULL,                            -- ê²Œì‹œê¸€ ì‘ì„±ì ì•„ì´ë””
+    subject        VARCHAR2(400)    NOT NULL,                           -- ê²Œì‹œê¸€ ì œëª©
+    content        VARCHAR2(4000)   NOT NULL,                          -- ê²Œì‹œê¸€ ë‚´ìš©
+    regdate        DATE      DEFAULT  SYSDATE  NOT NULL,      -- ê²Œì‹œê¸€ ë“±ë¡ì¼ì
+    hitcount       NUMBER(20)        DEFAULT 0 NOT NULL,         -- ê²Œì‹œê¸€ ì¡°íšŒìˆ˜
+    passwd        VARCHAR2(8)      NOT NULL,                             -- ê²Œì‹œê¸€ ë¹„ë°€ë²ˆí˜¸
+    group_no      NUMBER(7)        NOT NULL,                             -- ê³„ì¸µí˜• ê²Œì‹œíŒ êµ¬ì¡°ë¥¼ ìœ„í•œ ê²Œì‹œê¸€ ê·¸ë£¹ë²ˆí˜¸
+    level_no      NUMBER(2)        NOT NULL,                               -- ê³„ì¸µí˜• ê²Œì‹œíŒ êµ¬ì¡°ë¥¼ ìœ„í•œ ê·¸ë£¹ë‚´ ê²Œì‹œê¸€ ë ˆë²¨
+    order_no      NUMBER(3)        NOT NULL                              -- ê³„ì¸µí˜• ê²Œì‹œíŒ êµ¬ì¡°ë¥¼ ìœ„í•œ ê·¸ë£¹ë‚´ ê²Œì‹œê¸€ ìˆœì„œ
 );
 
---#5. °Ô½Ã±Û Å×ÀÌºí Á¦¾àÁ¶°Ç Ãß°¡
+--#5. ê²Œì‹œê¸€ í…Œì´ë¸” ì œì•½ì¡°ê±´ ì¶”ê°€
 ALTER TABLE article 
     ADD (
         CONSTRAINT article_id_pk PRIMARY KEY ( article_id ),
@@ -71,7 +71,7 @@ ALTER TABLE article
 );
   
 
---#6. °Ô½Ã±Û ½Äº°¹øÈ£¸¦ À§ÇÑ ½ÃÄö½º »ı¼º
+--#6. ê²Œì‹œê¸€ ì‹ë³„ë²ˆí˜¸ë¥¼ ìœ„í•œ ì‹œí€€ìŠ¤ ìƒì„±
 DROP SEQUENCE article_id_seq;
 
 CREATE SEQUENCE article_id_seq
@@ -81,24 +81,24 @@ CREATE SEQUENCE article_id_seq
 desc member;
 
 INSERT INTO member(id, passwd, name, email)
-VALUES('monday', '1111', '¿ù¿äÀÏ', 'monday@gmail.com');
+VALUES('monday', '1111', 'ì›”ìš”ì¼', 'monday@gmail.com');
 
 INSERT INTO member(id, passwd, name, email)
-VALUES('tuesday', '1111', 'È­¿äÀÏ', 'tuesday@gmail.com');
+VALUES('tuesday', '1111', 'í™”ìš”ì¼', 'tuesday@gmail.com');
 
 INSERT INTO member(id, passwd, name, email)
-VALUES('wednesday', '1111', '¼ö¿äÀÏ', 'wednesday@gmail.com');
+VALUES('wednesday', '1111', 'ìˆ˜ìš”ì¼', 'wednesday@gmail.com');
 
 INSERT INTO member(id, passwd, name, email)
-VALUES('thursday', '1111', '¸ñ¿äÀÏ', 'thursday@gmail.com');
+VALUES('thursday', '1111', 'ëª©ìš”ì¼', 'thursday@gmail.com');
 
 INSERT INTO member(id, passwd, name, email)
-VALUES('friday', '1111', '±İ¿äÀÏ', 'friday@gmail.com');
+VALUES('friday', '1111', 'ê¸ˆìš”ì¼', 'friday@gmail.com');
 
 COMMIT;
 
 
---#7. ÀÚÀ¯°Ô½ÃÆÇ ½Å±Ô±Û µî·Ï  Å×½ºÆ®
+--#7. ììœ ê²Œì‹œíŒ ì‹ ê·œê¸€ ë“±ë¡  í…ŒìŠ¤íŠ¸
 INSERT INTO article
             (article_id,
              board_id,
@@ -112,8 +112,8 @@ INSERT INTO article
 VALUES      (article_id_seq.NEXTVAL,
              10,
              'monday',
-             'monday ½Å±Ô±Û Á¦¸ñÀÔ´Ï´Ù.',
-             'monday ½Å±Ô±Û ³»¿ëÀÔ´Ï´Ù.',
+             'monday ì‹ ê·œê¸€ ì œëª©ì…ë‹ˆë‹¤.',
+             'monday ì‹ ê·œê¸€ ë‚´ìš©ì…ë‹ˆë‹¤.',
              '1111',
              article_id_seq.CURRVAL,
              0,
@@ -121,7 +121,7 @@ VALUES      (article_id_seq.NEXTVAL,
 
 commit;
 
--- #8. ½Å±Ô±Û¿¡ ´ëÇÑ Ã¹¹øÂ° ´ñ±Û µî·Ï Å×½ºÆ®
+-- #8. ì‹ ê·œê¸€ì— ëŒ€í•œ ì²«ë²ˆì§¸ ëŒ“ê¸€ ë“±ë¡ í…ŒìŠ¤íŠ¸
 INSERT INTO article
             (article_id,
              board_id,
@@ -135,8 +135,8 @@ INSERT INTO article
 VALUES      (article_id_seq.NEXTVAL,
              10,
              'tuesday',
-             'tuesday ´ñ±Û Á¦¸ñÀÔ´Ï´Ù.',
-             'tuesday ´ñ±Û ³»¿ëÀÔ´Ï´Ù.',
+             'tuesday ëŒ“ê¸€ ì œëª©ì…ë‹ˆë‹¤.',
+             'tuesday ëŒ“ê¸€ ë‚´ìš©ì…ë‹ˆë‹¤.',
              '1111',
              1,
              0 + 1,
@@ -146,7 +146,7 @@ VALUES      (article_id_seq.NEXTVAL,
                      AND group_no = 1));
 
  
--- #9. ½Å±Ô±Û¿¡ ´ëÇÑ µÎ¹øÂ° ´ñ±Û µî·Ï Å×½ºÆ®
+-- #9. ì‹ ê·œê¸€ì— ëŒ€í•œ ë‘ë²ˆì§¸ ëŒ“ê¸€ ë“±ë¡ í…ŒìŠ¤íŠ¸
 INSERT INTO article
             (article_id,
              board_id,
@@ -160,8 +160,8 @@ INSERT INTO article
 VALUES      (article_id_seq.NEXTVAL,
              10,
              'wednesday',
-             'wednesday ´ñ±Û Á¦¸ñÀÔ´Ï´Ù.',
-             'wednesday ´ñ±Û ³»¿ëÀÔ´Ï´Ù.',
+             'wednesday ëŒ“ê¸€ ì œëª©ì…ë‹ˆë‹¤.',
+             'wednesday ëŒ“ê¸€ ë‚´ìš©ì…ë‹ˆë‹¤.',
              '1111',
              1,
              0 + 1,
@@ -172,7 +172,7 @@ VALUES      (article_id_seq.NEXTVAL,
              
 COMMIT;
 
--- °Ô½Ã±Û Áß°£Á¡°Ë
+-- ê²Œì‹œê¸€ ì¤‘ê°„ì ê²€
 SELECT article_id,
                subject,
                writer,
@@ -186,9 +186,9 @@ WHERE  board_id = 10
 ORDER  BY group_no DESC,  order_no ASC; 
 
 
--- #10. ´ñ±Û¿¡ ´ëÇÑ ´ñ±Û µî·Ï Å×½ºÆ®
--- ºÎ¸ğ±ÛÀÇ article_id¸¦ Àü´Ş¹Ş¾Æ¾ß ÇÑ´Ù.(ex, article_id = 2) 
--- µî·ÏÀü¿¡ ºÎ¸ğ±Ûº¸´Ù order_noÀÌ Å«  order_noÀ» 1¾¿ Áõ°¡½ÃÅ²´Ù
+-- #10. ëŒ“ê¸€ì— ëŒ€í•œ ëŒ“ê¸€ ë“±ë¡ í…ŒìŠ¤íŠ¸
+-- ë¶€ëª¨ê¸€ì˜ article_idë¥¼ ì „ë‹¬ë°›ì•„ì•¼ í•œë‹¤.(ex, article_id = 2) 
+-- ë“±ë¡ì „ì— ë¶€ëª¨ê¸€ë³´ë‹¤ order_noì´ í°  order_noì„ 1ì”© ì¦ê°€ì‹œí‚¨ë‹¤
 UPDATE article 
 SET    order_no = order_no + 1 
 WHERE  board_id = 10 
@@ -197,7 +197,7 @@ WHERE  board_id = 10
                        FROM   article 
                        WHERE  article_id = 2);
                        
--- ´ë´ñ±Û µî·Ï           
+-- ëŒ€ëŒ“ê¸€ ë“±ë¡           
 INSERT INTO article
             (article_id,
              board_id,
@@ -212,8 +212,8 @@ VALUES      (
              article_id_seq.NEXTVAL,
              10,
              'thursday',
-             'thursday ´ë´ñ±Û Á¦¸ñÀÔ´Ï´Ù',
-             'thursday ´ë´ñ±Û ³»¿ëÀÔ´Ï´Ù',
+             'thursday ëŒ€ëŒ“ê¸€ ì œëª©ì…ë‹ˆë‹¤',
+             'thursday ëŒ€ëŒ“ê¸€ ë‚´ìš©ì…ë‹ˆë‹¤',
              '1111',
              1,
              2,
@@ -224,7 +224,7 @@ VALUES      (
               
 COMMIT;
 
--- ±Û¸ñ·Ï Áß°£Á¡°Ë
+-- ê¸€ëª©ë¡ ì¤‘ê°„ì ê²€
 SELECT article_id,
             subject,
             writer,
@@ -238,7 +238,7 @@ WHERE  board_id = 10
 ORDER  BY group_no DESC,
           order_no ASC; 
 
---#11. °Ô½Ã±Û ÀüÃ¼¸ñ·Ï Á¶È¸ Å×½ºÆ®¸¦ À§ÇÑ Å×½ºÆ® ½Å±Ô±Û µî·Ï(¼­ºêÄõ¸® È°¿ë)
+--#11. ê²Œì‹œê¸€ ì „ì²´ëª©ë¡ ì¡°íšŒ í…ŒìŠ¤íŠ¸ë¥¼ ìœ„í•œ í…ŒìŠ¤íŠ¸ ì‹ ê·œê¸€ ë“±ë¡(ì„œë¸Œì¿¼ë¦¬ í™œìš©)
 INSERT INTO article
             (article_id,
              board_id,
@@ -263,7 +263,7 @@ WHERE  writer = 'thursday';
 
 COMMIT;
 
---#12. °èÃşÇü °Ô½ÃÆÇ ¹× ÆäÀÌÂ¡ Ã³¸®¸¦ À§ÇÑ °Ô½Ã±Û¸ñ·Ï Á¶È¸(°¡»óÄÃ·³(rownum)°ú ¼­ºêÄõ¸® È°¿ë)
+--#12. ê³„ì¸µí˜• ê²Œì‹œíŒ ë° í˜ì´ì§• ì²˜ë¦¬ë¥¼ ìœ„í•œ ê²Œì‹œê¸€ëª©ë¡ ì¡°íšŒ(ê°€ìƒì»¬ëŸ¼(rownum)ê³¼ ì„œë¸Œì¿¼ë¦¬ í™œìš©)
 SELECT subject, 
        writer, 
        regdate, 
@@ -278,20 +278,20 @@ FROM   (SELECT CEIL(rownum / 10) request_page,
                                regdate, 
                                hitcount 
                         FROM   article 
-                        WHERE  board_id = 10 --ÀÚÀ¯°Ô½ÃÆÇ 
+                        WHERE  board_id = 10 --ììœ ê²Œì‹œíŒ 
                         ORDER  BY group_no DESC, 
                                   order_no ASC)) 
 WHERE  request_page = 1;
 
--- ÆäÀÌÂ¡ Ã³¸®¸¦ À§ÇÑ °Ë»ö°³¼ö
+-- í˜ì´ì§• ì²˜ë¦¬ë¥¼ ìœ„í•œ ê²€ìƒ‰ê°œìˆ˜
 SELECT COUNT(article_id) cnt
 FROM   article
 WHERE  board_id = 10
-       AND writer = '%Á¦¸ñ%'
-        OR subject LIKE '%Á¦¸ñ%'
-        OR content LIKE '%Á¦¸ñ%' ;
+       AND writer = '%ì œëª©%'
+        OR subject LIKE '%ì œëª©%'
+        OR content LIKE '%ì œëª©%' ;
 
--- ÆäÀÌÂ¡ Ã³¸®¸¦ À§ÇÑ °Ë»ö °Ô½Ã±Û °Ë»ö
+-- í˜ì´ì§• ì²˜ë¦¬ë¥¼ ìœ„í•œ ê²€ìƒ‰ ê²Œì‹œê¸€ ê²€ìƒ‰
 SELECT subject, 
        writer, 
        regdate, 

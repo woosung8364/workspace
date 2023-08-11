@@ -1,0 +1,300 @@
+[2023-08-10 09:56:01][main][DEBUG](LogFactory.java:109) : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2023-08-10 09:56:01][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:01][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:01][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:01][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:01][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:01][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:01][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:01][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:434) : Created connection 1002041276.
+[2023-08-10 09:56:02][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@3bb9efbc]
+[2023-08-10 09:56:02][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: SELECT board_id AS "boardId" , category AS "category" , title AS "title" , description AS "description" FROM board ORDER BY regdate ASC
+[2023-08-10 09:56:02][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 
+[2023-08-10 09:56:02][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@3bb9efbc]
+[2023-08-10 09:56:02][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@3bb9efbc]
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:391) : Returned connection 1002041276 to pool.
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:56:02][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:434) : Created connection 356691811.
+[2023-08-10 09:56:02][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@1542af63]
+[2023-08-10 09:56:02][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: INSERT INTO member ( board_id "boardId", category "category", title "title" , description "description" ) VALUES ( ? , ? , ? , ? )
+[2023-08-10 09:56:02][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 100(Integer), 10(Integer), 가나다라(String), 마바사자(String)
+[2023-08-10 09:56:02][main][DEBUG](JdbcTransaction.java:80) : Rolling back JDBC Connection [oracle.jdbc.driver.T4CConnection@1542af63]
+[2023-08-10 09:56:02][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@1542af63]
+[2023-08-10 09:56:02][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@1542af63]
+[2023-08-10 09:56:02][main][DEBUG](PooledDataSource.java:391) : Returned connection 356691811 to pool.
+[2023-08-10 09:58:20][main][DEBUG](LogFactory.java:109) : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2023-08-10 09:58:20][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:20][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:20][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:20][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:20][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:20][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:20][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:21][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:434) : Created connection 439925336.
+[2023-08-10 09:58:21][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 09:58:21][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: SELECT board_id AS "boardId" , category AS "category" , title AS "title" , description AS "description" FROM board
+[2023-08-10 09:58:21][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 
+[2023-08-10 09:58:21][main][DEBUG](BaseJdbcLogger.java:137) : <==      Total: 5
+[2023-08-10 09:58:21][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=10, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 09:58:21][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=20, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 09:58:21][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=30, category=1, title=만땅자료실, description=이것 저것 없는게 없는 만땅 자료실입니다.)
+[2023-08-10 09:58:21][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=40, category=2, title=묻고답하기, description=IT 관련 무엇이든 물어 보세요.)
+[2023-08-10 09:58:21][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=50, category=2, title=공지사항, description=공지사항입니다.)
+[2023-08-10 09:58:21][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 09:58:21][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:391) : Returned connection 439925336 to pool.
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:58:21][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:434) : Created connection 197449185.
+[2023-08-10 09:58:21][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 09:58:21][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: INSERT INTO member ( board_id "boardId", category "category", title "title" , description "description" ) VALUES ( ? , ? , ? , ? )
+[2023-08-10 09:58:21][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 100(Integer), 10(Integer), 가나다라(String), 마바사자(String)
+[2023-08-10 09:58:21][main][DEBUG](JdbcTransaction.java:80) : Rolling back JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 09:58:21][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 09:58:21][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 09:58:21][main][DEBUG](PooledDataSource.java:391) : Returned connection 197449185 to pool.
+[2023-08-10 09:59:32][main][DEBUG](LogFactory.java:109) : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2023-08-10 09:59:32][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:32][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:32][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:32][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:32][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:32][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:32][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:32][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 09:59:32][main][DEBUG](PooledDataSource.java:434) : Created connection 439925336.
+[2023-08-10 09:59:32][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 09:59:32][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: SELECT board_id AS "boardId", category AS "category", title AS "title", description AS "description" FROM board
+[2023-08-10 09:59:32][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 
+[2023-08-10 09:59:33][main][DEBUG](BaseJdbcLogger.java:137) : <==      Total: 5
+[2023-08-10 09:59:33][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=10, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 09:59:33][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=20, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 09:59:33][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=30, category=1, title=만땅자료실, description=이것 저것 없는게 없는 만땅 자료실입니다.)
+[2023-08-10 09:59:33][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=40, category=2, title=묻고답하기, description=IT 관련 무엇이든 물어 보세요.)
+[2023-08-10 09:59:33][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=50, category=2, title=공지사항, description=공지사항입니다.)
+[2023-08-10 09:59:33][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 09:59:33][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 09:59:33][main][DEBUG](PooledDataSource.java:391) : Returned connection 439925336 to pool.
+[2023-08-10 09:59:33][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:33][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:33][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:33][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:33][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:33][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:33][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 09:59:33][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 09:59:33][main][DEBUG](PooledDataSource.java:434) : Created connection 397822273.
+[2023-08-10 09:59:33][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 09:59:33][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: INSERT INTO board (board_id "boardId", category "category", title "title" , description "description") VALUES (?, ?, ?, ?)
+[2023-08-10 09:59:33][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 100(Integer), 10(Integer), 가나다라(String), 마바사자(String)
+[2023-08-10 09:59:33][main][DEBUG](JdbcTransaction.java:80) : Rolling back JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 09:59:33][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 09:59:33][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 09:59:33][main][DEBUG](PooledDataSource.java:391) : Returned connection 397822273 to pool.
+[2023-08-10 10:00:37][main][DEBUG](LogFactory.java:109) : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:434) : Created connection 439925336.
+[2023-08-10 10:00:37][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:00:37][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: SELECT board_id AS "boardId", category AS "category", title AS "title", description AS "description" FROM board
+[2023-08-10 10:00:37][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 
+[2023-08-10 10:00:37][main][DEBUG](BaseJdbcLogger.java:137) : <==      Total: 5
+[2023-08-10 10:00:37][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=10, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 10:00:37][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=20, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 10:00:37][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=30, category=1, title=만땅자료실, description=이것 저것 없는게 없는 만땅 자료실입니다.)
+[2023-08-10 10:00:37][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=40, category=2, title=묻고답하기, description=IT 관련 무엇이든 물어 보세요.)
+[2023-08-10 10:00:37][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=50, category=2, title=공지사항, description=공지사항입니다.)
+[2023-08-10 10:00:37][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:00:37][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:391) : Returned connection 439925336 to pool.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:00:37][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 10:00:37][main][DEBUG](PooledDataSource.java:434) : Created connection 397822273.
+[2023-08-10 10:00:37][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 10:00:37][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: INSERT INTO board (board_id AS "boardId", category AS "category", title AS "title", description AS "description") VALUES (?, ?, ?, ?)
+[2023-08-10 10:00:37][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 100(Integer), 10(Integer), 가나다라(String), 마바사자(String)
+[2023-08-10 10:00:38][main][DEBUG](JdbcTransaction.java:80) : Rolling back JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 10:00:38][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 10:00:38][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 10:00:38][main][DEBUG](PooledDataSource.java:391) : Returned connection 397822273 to pool.
+[2023-08-10 10:01:53][main][DEBUG](LogFactory.java:109) : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2023-08-10 10:01:53][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:53][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:53][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:53][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:53][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:53][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:53][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:53][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 10:01:53][main][DEBUG](PooledDataSource.java:434) : Created connection 439925336.
+[2023-08-10 10:01:53][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:01:53][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: SELECT board_id AS "boardId", category AS "category", title AS "title", description AS "description" FROM board
+[2023-08-10 10:01:54][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 
+[2023-08-10 10:01:54][main][DEBUG](BaseJdbcLogger.java:137) : <==      Total: 5
+[2023-08-10 10:01:54][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=10, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 10:01:54][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=20, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 10:01:54][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=30, category=1, title=만땅자료실, description=이것 저것 없는게 없는 만땅 자료실입니다.)
+[2023-08-10 10:01:54][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=40, category=2, title=묻고답하기, description=IT 관련 무엇이든 물어 보세요.)
+[2023-08-10 10:01:54][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=50, category=2, title=공지사항, description=공지사항입니다.)
+[2023-08-10 10:01:54][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:01:54][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:01:54][main][DEBUG](PooledDataSource.java:391) : Returned connection 439925336 to pool.
+[2023-08-10 10:01:54][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:54][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:54][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:54][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:54][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:54][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:54][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:01:54][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 10:01:54][main][DEBUG](PooledDataSource.java:434) : Created connection 397822273.
+[2023-08-10 10:01:54][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 10:01:54][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: INSERT INTO board (board_id "boardId", category, title, description) VALUES (?, ?, ?, ?)
+[2023-08-10 10:01:54][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 100(Integer), 10(Integer), 가나다라(String), 마바사자(String)
+[2023-08-10 10:01:54][main][DEBUG](JdbcTransaction.java:80) : Rolling back JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 10:01:54][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 10:01:54][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@17b64941]
+[2023-08-10 10:01:54][main][DEBUG](PooledDataSource.java:391) : Returned connection 397822273 to pool.
+[2023-08-10 10:04:57][main][DEBUG](LogFactory.java:109) : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2023-08-10 10:04:57][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:57][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:57][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:57][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:57][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:57][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:57][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:58][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:434) : Created connection 439925336.
+[2023-08-10 10:04:58][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:04:58][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: SELECT board_id AS "boardId", category AS "category", title AS "title", description AS "description" FROM board
+[2023-08-10 10:04:58][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 
+[2023-08-10 10:04:58][main][DEBUG](BaseJdbcLogger.java:137) : <==      Total: 5
+[2023-08-10 10:04:58][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=10, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 10:04:58][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=20, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 10:04:58][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=30, category=1, title=만땅자료실, description=이것 저것 없는게 없는 만땅 자료실입니다.)
+[2023-08-10 10:04:58][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=40, category=2, title=묻고답하기, description=IT 관련 무엇이든 물어 보세요.)
+[2023-08-10 10:04:58][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=50, category=2, title=공지사항, description=공지사항입니다.)
+[2023-08-10 10:04:58][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:04:58][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:391) : Returned connection 439925336 to pool.
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:04:58][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:434) : Created connection 197449185.
+[2023-08-10 10:04:58][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:04:58][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: INSERT INTO board (board_id , "boardId", category, title, description) VALUES (?, ?, ?, ?)
+[2023-08-10 10:04:58][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 100(Integer), 10(Integer), 가나다라(String), 마바사자(String)
+[2023-08-10 10:04:58][main][DEBUG](JdbcTransaction.java:80) : Rolling back JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:04:58][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:04:58][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:04:58][main][DEBUG](PooledDataSource.java:391) : Returned connection 197449185 to pool.
+[2023-08-10 10:06:15][main][DEBUG](LogFactory.java:109) : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2023-08-10 10:06:15][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:15][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:15][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:15][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:15][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:15][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:15][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:16][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:434) : Created connection 439925336.
+[2023-08-10 10:06:16][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:06:16][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: SELECT board_id AS "boardId", category AS "category", title AS "title", description AS "description" FROM board
+[2023-08-10 10:06:16][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 
+[2023-08-10 10:06:16][main][DEBUG](BaseJdbcLogger.java:137) : <==      Total: 5
+[2023-08-10 10:06:16][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=10, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 10:06:16][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=20, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 10:06:16][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=30, category=1, title=만땅자료실, description=이것 저것 없는게 없는 만땅 자료실입니다.)
+[2023-08-10 10:06:16][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=40, category=2, title=묻고답하기, description=IT 관련 무엇이든 물어 보세요.)
+[2023-08-10 10:06:16][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=50, category=2, title=공지사항, description=공지사항입니다.)
+[2023-08-10 10:06:16][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:06:16][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:391) : Returned connection 439925336 to pool.
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:06:16][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:434) : Created connection 197449185.
+[2023-08-10 10:06:16][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:06:16][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: INSERT INTO board (board_id, "boardId", category, title, description) VALUES (?, ?, ?, ?)
+[2023-08-10 10:06:16][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 100(Integer), 10(Integer), 가나다라(String), 마바사자(String)
+[2023-08-10 10:06:16][main][DEBUG](JdbcTransaction.java:80) : Rolling back JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:06:16][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:06:16][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:06:16][main][DEBUG](PooledDataSource.java:391) : Returned connection 197449185 to pool.
+[2023-08-10 10:08:25][main][DEBUG](LogFactory.java:109) : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2023-08-10 10:08:25][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:25][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:25][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:25][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:25][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:25][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:25][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:26][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:434) : Created connection 439925336.
+[2023-08-10 10:08:26][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:08:26][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: SELECT board_id AS "boardId", category AS "category", title AS "title", description AS "description" FROM board
+[2023-08-10 10:08:26][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 
+[2023-08-10 10:08:26][main][DEBUG](BaseJdbcLogger.java:137) : <==      Total: 5
+[2023-08-10 10:08:26][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=10, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 10:08:26][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=20, category=1, title=자유게시판, description=누구나 자유롭게 글을 쓰실 수 있는 자유게시판입니다.)
+[2023-08-10 10:08:26][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=30, category=1, title=만땅자료실, description=이것 저것 없는게 없는 만땅 자료실입니다.)
+[2023-08-10 10:08:26][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=40, category=2, title=묻고답하기, description=IT 관련 무엇이든 물어 보세요.)
+[2023-08-10 10:08:26][main][DEBUG](BoardMapperTest.java:89) : 전체 게시판 : BoardDTO(boardId=50, category=2, title=공지사항, description=공지사항입니다.)
+[2023-08-10 10:08:26][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:08:26][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@1a38ba58]
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:391) : Returned connection 439925336 to pool.
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:363) : PooledDataSource forcefully closed/removed all connections.
+[2023-08-10 10:08:26][main][DEBUG](JdbcTransaction.java:137) : Opening JDBC Connection
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:434) : Created connection 197449185.
+[2023-08-10 10:08:26][main][DEBUG](JdbcTransaction.java:101) : Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:08:26][main][DEBUG](BaseJdbcLogger.java:137) : ==>  Preparing: INSERT INTO board (board_id, category, title, description) VALUES (?, ?, ?, ?)
+[2023-08-10 10:08:26][main][DEBUG](BaseJdbcLogger.java:137) : ==> Parameters: 100(Integer), 10(Integer), 가나다라(String), 마바사자(String)
+[2023-08-10 10:08:26][main][DEBUG](BaseJdbcLogger.java:137) : <==    Updates: 1
+[2023-08-10 10:08:26][main][DEBUG](BoardMapperTest.java:73) : 멤버등록 완료 : BoardDTO(boardId=100, category=10, title=가나다라, description=마바사자)
+[2023-08-10 10:08:26][main][DEBUG](JdbcTransaction.java:80) : Rolling back JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:08:26][main][DEBUG](JdbcTransaction.java:123) : Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:08:26][main][DEBUG](JdbcTransaction.java:91) : Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@bc4d5e1]
+[2023-08-10 10:08:26][main][DEBUG](PooledDataSource.java:391) : Returned connection 197449185 to pool.

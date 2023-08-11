@@ -10,7 +10,7 @@ import lombok.ToString;
 
 /**
  * JavaBean 규약에 따라 만든 재사용 가능한 컴포넌트
- * @author 김기정
+ * @author 송우성
  *
  */
 @NoArgsConstructor

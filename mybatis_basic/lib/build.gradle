@@ -18,13 +18,12 @@ repositories {
 
 dependencies {
 
-
-   // 8월 7일 assertj 추가됨
-	testImplementation 'org.assertj:assertj-core:3.22.0'
-
     // Junit : 기본버전
     // 문제 생겨서 기본버전으로 두었음
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    
+     // 8월 7일 assertj 추가됨
+	testImplementation 'org.assertj:assertj-core:3.22.0'
     
     // slf4j 
 	implementation 'org.slf4j:slf4j-api:2.0.6'

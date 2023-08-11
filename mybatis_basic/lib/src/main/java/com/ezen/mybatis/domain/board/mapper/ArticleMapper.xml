@@ -1,72 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-                        
+
 <!-- 네임스페이스(사용영역) 설정 -->
 <!-- 패키지 기능 : select 이름이 중복되어 충돌되는걸 방지해준다 -->
-<!-- mapper 안의 select 태그들을 해당하는 경로로 저장하겠다~  -->
-<mapper namespace="com.ezen.mybatis.domain.board.mapper.ArticleMapper">
+<!-- mapper 안의 select 태그들을 해당하는 경로로 저장하겠다~ -->
+<mapper
+	namespace="com.ezen.mybatis.domain.board.mapper.ArticleMapper">
 
 	<!-- 게시글 등록 -->
 	<insert id="create" parameterType="Article">
-		INSERT INTO article 
-		            (article_id,
-		            board_id,
-		            writer,
-		            subject,
-		            content,
-		            regdate,
-		            hitcount,
-		            passwd,
-		            group_no,
-		            level_no,
-		            order_no)
-		              
-		VALUES     (#{articleId},
-		            #{boardId},
-		            #{writer},
-		            #{subject},
-		            #{content},
-		            TO_DATE(#{regdate}, 'YYYY-MM-DD'),
-		            #{hitcount},
-		            #{passwd},
-		            #{groupNum},
-		            #{levelNum},
-		            #{orderNum})
+		INSERT INTO article
+		(article_id,
+		board_id,
+		writer,
+		subject,
+		content,
+		regdate,
+		hitcount,
+		passwd,
+		group_no,
+		level_no,
+		order_no)
+
+		VALUES (#{articleId},
+		#{boardId},
+		#{writer},
+		#{subject},
+		#{content},
+		TO_DATE(#{regdate}, 'YYYY-MM-DD'),
+		#{hitcount},
+		#{passwd},
+		#{groupNum},
+		#{levelNum},
+		#{orderNum})
+	</insert>
+
+
+	<!-- 전체 게시글 목록 -->
+	<select id="findAll" resultType="Article">
+		SELECT
+		article_id "articleId",
+		board_id "boardId",
+		writer "writer",
+		subject "subject",
+		content "content",
+		regdate "regdate",
+		hitcount "hitcount",
+		passwd "passwd",
+		group_no "groupNum",
+		level_no "levelNum",
+		order_no "orderNum"
+		FROM article
+		ORDER BY regdate ASC
+	</select>
+
+	<!-- 전체 게시글 수 -->
+	<select id="getCountAll" resultType="int">
+		SELECT
+		COUNT(article_id)
+		FROM
+		article
+	</select>
+
+	<!-- getCountAll2 구현 예정... -->
+
+	<!-- 요청페이지 -->
+	<select id="findByAll" resultType="Article"
+		parameterType="PageParams">
+
+	</select>
+
+
+	<!-- 댓글쓰기 -->
+
+	<insert id="createArticle" parameterType="Article">
+		INSERT INTO article
+			(article_id,
+			board_id,
+			writer,
+			subject,
+			content,
+			passwd,
+			group_no,
+			level_no,
+			order_no)
+		VALUES 
+			(article_id_seq.NEXTVAL,
+			#{boardId},
+			#{writer},
+			#{subject},
+			#{content},
+			#{passwd},
+			#{groupNum},
+			#{levelNum}+1,
+			(SELECT MAX(#{orderNum}) + 1
+			FROM article
+			WHERE board_id = #{borderId}
+			AND group_no = #{groupNum} ));
+	</insert>
+	
+	<!--  대댓글 쓰기 -->
+	<insert id="createSubArticle">
+	INSERT INTO article
+            	(article_id "articleId",
+             	board_id "boardId",
+             	writer,
+             	subject,
+             	content,
+             	passwd,
+             	group_no "groupNum",
+             	level_no "levelNum",
+             	order_no "orderNum")
+	VALUES      (
+             article_id_seq.NEXTVAL,
+             10,
+             'thursday',
+             'thursday 대댓글 제목입니다',
+             'thursday 대댓글 내용입니다',
+             '1111',
+             1,
+             2,
+             (SELECT order_no + 1
+              FROM   article
+              WHERE  article_id = 2));      
 	</insert>
 	
 	
-	<!-- 전체 게시글 목록 -->
-	<select id="findAll" resultType="Article" >
-		SELECT 
-				 	article_id                  "articleId",
-		            board_id                    "boardId",
-		            writer                    "writer",
-		            subject                    "subject",
-		            content                    "content",
-		            regdate                    "regdate",
-		            hitcount                    "hitcount",
-		            passwd                    "passwd",
-		            group_no                    "groupNum",
-		            level_no                    "levelNum",
-		            order_no                    "orderNum"
-		FROM   article 
-		ORDER  BY regdate ASC
+	<!--  게시글 상세보기  -->
+	<select id="viewArticleAll" parameterType="int">
+	
+		SELECT
+            	article_id,
+             	board_id,
+             	writer,
+             	subject,
+             	content,
+             	passwd,
+             	group_no,
+             	level_no,
+             	order_no
+        FROM
+        		article
+       	WHERE 
+       			group_no = #{groupNum}
+				
 	</select>
 	
-	<!-- 전체 게시글 수 -->
-	<select id="getCountAll" resultType="int">
-		SELECT 
-			COUNT(article_id)
-		FROM   
-			article
+	
+	<!--  게시글 번호로 게시글 검색  -->
+	<select id="searchArticle" parameterType="int">
+	
+		SELECT
+            	article_id,
+             	board_id,
+             	writer,
+             	subject,
+             	content,
+             	passwd,
+             	group_no,
+             	level_no,
+             	order_no
+        FROM
+        		article
+       	WHERE 
+       			article_id = #{articleId}
+				
 	</select>
 	
-	<!-- getCountAll2 구현 예정... -->
 	
-	<!-- 요청페이지  -->
-	<select id="findByAll" resultType="Article" parameterType="PageParams">
 	
-	</select>
-	 		
+	<!--  게시글 수정  -->
+	<update id="updateArticle" parameterType="Article">
+	
+		UPDATE  article
+       	SET 	subject =#{subject} ,
+             	content =#{content} ,
+             	passwd  =#{passwd} 
+       	WHERE 
+       			article_id = #{articleId}
+				
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="deleteArticle" parameterType="int">
+		DELETE FROM article
+		WHERE  article_id = #{articleId}
+	</delete>
+	
+	
+	
+
 </mapper>

@@ -6,7 +6,10 @@ import com.ezen.mybatis.domain.board.dto.ArticleDTO;
 import com.ezen.mybatis.domain.common.web.PageParams;
 
 /**
- * article 테이블 관련 명세
+ * 로그 설정 저장 : logback.xml
+ * 저장소 : ????DTO
+ * SQL 쿼리 실행 : ????.xml 파일
+ * Ma
  */
 public interface ArticleMapper {
 	/** 신규 게시글 등록 */
@@ -25,20 +28,19 @@ public interface ArticleMapper {
 	public List<ArticleDTO> findByAll(PageParams pageParams);
 
 //	   댓글쓰기
-//	   그룹번호를 기준으로 게시판 / 댓글 분류
-	public void createArticle(int groupNum);
+	public void createArticle(ArticleDTO articleDTO);
 
 //	   대댓글 쓰기,
-	public void createSubArticle(int articleId);
+	public void createSubArticle();
 
 //	   게시글 상세보기 : 게시글 , 댓글 , 대댓글 전부 출력
 	public void viewArticleAll(int groupNum);
 
 //	   게시글 번호로 게시글 검색
-	public ArticleDTO viewArticle(int articleId);
+	public ArticleDTO searchArticle(int articleId);
 
 //	   게시글 수정
-	public ArticleDTO updateArticle(int articleId);
+	public ArticleDTO updateArticle(ArticleDTO articleDTO);
 
 //	   게시글 삭제 
 	public ArticleDTO deleteArticle(int articleId);

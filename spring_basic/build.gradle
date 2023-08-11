@@ -1,0 +1,47 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.2'
+	id 'io.spring.dependency-management' version '1.1.2'
+}
+
+group = 'com.ezen'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	 // Junit : 기본버전
+    // 문제 생겨서 기본버전으로 두었음
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    
+     // 8월 7일 assertj 추가됨
+	testImplementation 'org.assertj:assertj-core:3.22.0'
+    
+    // slf4j 
+	implementation 'org.slf4j:slf4j-api:2.0.6'
+	// logback
+	implementation 'ch.qos.logback:logback-classic:1.4.5'
+	testImplementation 'ch.qos.logback:logback-classic:1.4.5'
+    
+    
+    // lombok 라이브러리 8월 8일 추가됨
+    // getter ,setter , toString 등 자동으로~
+	compileOnly 'org.projectlombok:lombok:1.18.28'
+	
+	// 오라클  ojdbc8 라이브러리 8월 8일 추가됨
+	implementation 'com.oracle.database.jdbc:ojdbc8:21.9.0.0'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

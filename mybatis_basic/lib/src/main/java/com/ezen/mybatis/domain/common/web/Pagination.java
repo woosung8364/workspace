@@ -132,47 +132,4 @@ public class Pagination {
 		return endPage < totalPages;
 	}
 	
-	
-	/** 테스트을 위한 main */
-	public static void main(String[] args) {
-		PageParams params = new PageParams(5, 5, 15, 501);
-		Pagination pagination = new Pagination(params);
-		
-		System.out.println("검색된 행수: " + params.getRowCount());
-		System.out.println("요청페이지: " + pagination.getParams().getRequestPage());
-		System.out.println("전체페이지수: " + pagination.getTotalPages());
-		
-		System.out.println("현재목록의 시작페이지: " + pagination.getStartPage());
-		System.out.println("현재목록의 끝페이지: " + pagination.getEndPage());
-		
-		System.out.println("처음으로 보여주기 여부: " + pagination.isShowFirst());
-		System.out.println("이전목록 보여주기 여부: " + pagination.isShowPrevious());
-		
-		System.out.println("다음목록 보여주기 여부: " + pagination.isShowNext());
-		System.out.println("끝으로 보여주기 여부: " + pagination.isShowLast());
-		
-		// JSP에서 페이지 번호 직접 출력 시
-		if(pagination.isShowFirst()) {
-			System.out.print("처음으로 ");
-		}
-		
-		if(pagination.isShowPrevious()) {
-			System.out.print("이전목록 ");
-		}
-		
-		
-		for(int i=pagination.getStartPage(); i<=pagination.getEndPage(); i++){
-			System.out.print(i + " ");
-		}
-		
-		if(pagination.isShowNext()) {
-			System.out.print("다음목록 ");
-		}
-		
-		if(pagination.isShowLast()) {
-			System.out.print("끝으로 ");
-		}
-		System.out.println();
-		
-	}
 }

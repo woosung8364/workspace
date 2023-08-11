@@ -33,6 +33,7 @@ public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private final Map<String, Object> handlerMappingMap = new HashMap<String, Object>();
+//	요청이 들어오면 요청을 분석
 	private final List<MyHandlerAdapter> handlerAdapters = new ArrayList<MyHandlerAdapter>();
 
 	@Override
