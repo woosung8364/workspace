@@ -50,4 +50,15 @@ public class RestMemberController {
 //		리턴된 값들은  body 에 그대로 JSON 방식으로 출력된다
 		return "아이디 : "+id+" , 이름 : " +name;
 	}
+	
+	
+//	회원가입 요청 처리
+//	@RequestBody를 통해 Member 객체에 데이터가 json 형식으로 들어옴
+	@PostMapping("/register")
+	@ResponseBody
+	public Member register(@RequestBody Member member) {
+		log.info(member.toString());
+//		MemberService 를 이용한 DB 처리 완료 가정
+		return member;
+	}
 }

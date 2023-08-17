@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>타임리프 사용하기</title>
+</head>
+
+<body>
+	<h2>회원 가입 결과 페이지 입니다</h2>
+	<div th:text="${result}"></div>
+	<div th:text="${member}"></div>
+	
+	
+	<!-- th:inline : 내용물의 결과값을 문자열로 -->
+	<!-- POSTMAN 에서 확인가능함 -->
+	<script th:inline="javascript">
+	
+	let result= [[${result}]];
+	// 객체인경우 JSON 형식으로 표현됨
+	let member = [[${member}]];
+	let memberObject = JSON.parse(member);
+	console.log(result);
+	console.log(memberObject.id);
+	</script>
+	
+	
+</body>
+
+
+
+</html>

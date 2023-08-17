@@ -29,6 +29,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\ezen-fullstack\workspace\spring_mvc"/>
 			<item value="C:\ezen-fullstack\workspace\java_io"/>
 			<item value="C:\ezen-fullstack\workspace\project_shoppingmall 지연님"/>
 			<item value="C:\ezen-fullstack\workspace\project_shoppingmall (3)"/>

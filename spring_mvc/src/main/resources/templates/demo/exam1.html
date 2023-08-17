@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>타임리프 사용하기</title>
+</head>
+
+<body>
+	<h2>사용자 상세정보</h2>
+	<ul>
+		<li th:text="${member.id}">hong</li>
+		<li th:text="${member.age}">20</li>
+	</ul>
+	
+	<table>
+		<!-- /* 타임리프 반복문 사용해보기 */-->
+		<tr th:each="member , state : ${list}" th:object="${member}">
+			<td th:text="${state.current}">객체</td>
+			<td th:text="*{id}">아이디</td>
+			<td th:text="*{age}">나이</td>
+		</tr>
+	</table>
+	
+	<!-- 가상의 블록 설정해보기 -->
+	<th:block th:each="member : ${list}">
+		<h2 th:text="${member.id}"></h2>
+		<p th:text="${member.age}+살"></p>
+	</th:block>
+</body>
+
+
+
+</html>

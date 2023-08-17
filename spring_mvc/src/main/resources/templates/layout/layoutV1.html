@@ -1,0 +1,54 @@
+<!-- index.html 파일을 static 경로안에 넣어두면
+Spring 에서 자동으로 welcome 파일로 등록함 -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<th:block th:fragment="setContent(content)">
+<head>
+<meta charset="utf-8">
+<title>탬플릿 페이지</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	width: 100vw;
+	height: 20vw;
+	background-color:#dadada;
+}
+
+.content {
+	width: 100vw;
+	height: 70vh;
+	background-color: pink;
+}
+
+.footer {
+	width: 100vw;
+	height: 10vh;
+	background-color: green;
+}
+</style>
+</head>
+<body>
+
+
+	<div class="header">
+		<h1>헤더 영역 입니다</h1>
+	</div>
+	
+	<div class="content">
+		<th:block th:replace="${content}"></th:block>
+	</div>
+	
+	<div class="footer">
+		<h1>바닦글 영역 입니다</h1>
+	</div>
+	
+	</th:block>
+</body>
+</html>

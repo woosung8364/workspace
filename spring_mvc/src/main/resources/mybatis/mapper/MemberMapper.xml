@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Mapper 클래스 경로설정 -->
+<mapper namespace="com.ezen.springmvc.domain.member.mapper.MemberMapper">
+
+	<!-- 전체 회원 조회 -->
+	<select id="findByAll" resultType="Member">
+		SELECT id, name, email, passwd , regdate
+		FROM member
+	</select>
+	
+	<!-- 아이디로 회원 찾기 -->
+	<select id="findById" parameterType="string" resultType="Member">
+		SELECT id, name, email, TO_CHAR(regdate, 'yyyy-MM-DDHH24:MI:SS') regdate , passwd
+		FROM member
+		WHERE id = #{value}
+	</select>
+	
+	
+	<!-- 이름으로 특정 회원 검색하기 -->
+	<select id="findByNameLike" parameterType="string" resultType="Member">
+		SELECT id, name, email, TO_CHAR(regdate, 'yyyy-MM-DDHH24:MI:SS') regdate , passwd
+		FROM member
+		WHERE  name = #{value}
+	</select>
+	
+	<!-- 회원 등록 -->
+	<insert id="create" parameterType="Member">
+		INSERT INTO member 
+		            (id ,
+		            name ,
+		            email ,
+		            passwd ,
+		            regdate 
+		            )  
+		VALUES     (
+		            #{id} ,
+		            #{name} ,
+		            #{email} ,
+		            #{passwd} ,,
+		            TO_DATE(#{regdate}, 'YYYY-MM-DD') 
+		           )
+	</insert>
+	
+	<!-- 회원 정보 수정 -->
+	<update id="update" parameterType="Member">
+		UPDATE member
+		SET    passwd = #{passwd}
+		WHERE  id = #{id}
+	</update>
+	
+	
+	
+	
+	
+	
+</mapper>

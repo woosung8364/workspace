@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>타임리프 사용하기3</title>
+</head>
+
+<body>
+
+   <H1>URL 링크</H1>
+  
+  <ul>
+  <!-- 타임리프로 URL 링크 적용해보기 -->
+  <li><a href="#" th:href="@{/thymeleaf/exam1}">exam1으로 이동</a></li>
+  
+  <!-- 링크와 동시에 파라미터 전달까지 같이 해보기 -->
+  <li><a href="#" th:href="@{/hello(id=${id} , name=${name})}">hello 로 이동(url에 파라미터값 전달)</a></li>
+  
+  <!-- Path Variable -->
+  <li><a href="#" th:href="@{/thymeleaf/{id}(id=${id})}">exam2으로 이동</a></li>
+  </ul>
+  
+  <!-- 특정 태그에 임의로 클래스 추가해보기 th:classappend -->
+  <!-- = class="text some" -->
+  <input type="text" class="text" th:classappend="some">
+  <input type="checkbox" th:checked="true">
+</body>
+
+
+
+</html>

@@ -1,2 +1,3 @@
 content-types/org.eclipse.jst.jsp.core.jspsource/charset=utf-8
+content-types/org.eclipse.wst.html.core.htmlsource/file-names=hello.html,exam2.html,exam3.html,member-result.html,index.html,layoutV1.html,regist-form.html,layoutV2.html,board.html,exam1.html
 eclipse.preferences.version=1
