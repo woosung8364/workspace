@@ -70,6 +70,8 @@ ALTER TABLE article
         CONSTRAINT writer_fk FOREIGN KEY ( writer )  REFERENCES member (id)
 );
   
+  
+
 
 --#6. 게시글 식별번호를 위한 시퀀스 생성
 DROP SEQUENCE article_id_seq;
@@ -121,8 +123,25 @@ VALUES      (article_id_seq.NEXTVAL,
 
 commit;
 
+-- 특정 컬럼 삭제
+DELETE FROM article
+WHERE passwd=1234;
+
+
+--전체 컬럼 조회
+SELECT 
+    *
+FROM
+    article
+ORDER BY
+    article_id DESC;
+
+
+
+
 -- #8. 신규글에 대한 첫번째 댓글 등록 테스트
-INSERT INTO article
+INSERT INTO  
+            article
             (article_id,
              board_id,
              writer,
@@ -134,7 +153,7 @@ INSERT INTO article
              order_no)
 VALUES      (article_id_seq.NEXTVAL,
              10,
-             'tuesday',
+             '관리자',
              'tuesday 댓글 제목입니다.',
              'tuesday 댓글 내용입니다.',
              '1111',

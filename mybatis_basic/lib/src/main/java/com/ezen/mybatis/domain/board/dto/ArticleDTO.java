@@ -1,11 +1,5 @@
 package com.ezen.mybatis.domain.board.dto;
 
-
-
-
-
-
-
 import java.util.Date;
 
 import lombok.AllArgsConstructor;

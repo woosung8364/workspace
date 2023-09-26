@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 네임스페이스(사용영역) 설정 -->
+<!-- 패키지 기능 : select 이름이 중복되어 충돌되는걸 방지해준다 -->
+<!-- mapper 안의 select 태그들을 해당하는 경로로 저장하겠다~ -->
+
+<mapper namespace="com.ezen.springmvc.domain.article.mapper.ArticleMapper">
+
+	<!-- 게시글 등록 -->
+	<insert id="create" parameterType="ArticleDTO">
+		INSERT INTO article
+		(article_id,
+		board_id,
+		writer,
+		subject,
+		content,
+		hitcount,
+		passwd,
+		group_no,
+		level_no,
+		order_no)
+		VALUES (article_id_seq.NEXTVAL,
+		#{boardId},
+		#{writer},
+		#{subject},
+		#{content},
+		#{hitcount},
+		#{passwd},
+		article_id_seq.CURRVAL,
+		#{levelNum},
+		#{orderNum})
+	</insert>
+
+
+
+	<!-- 전체 게시글 목록 -->
+	<select id="findAll" resultType="ArticleDTO">
+		SELECT
+		article_id "articleId",
+		board_id "boardId",
+		writer "writer",
+		subject "subject",
+		content "content",
+		regdate "regdate",
+		hitcount "hitcount",
+		passwd "passwd",
+		group_no "groupNum",
+		level_no "levelNum",
+		order_no "orderNum"
+		FROM
+		article
+		ORDER BY regdate ASC
+	</select>
+
+	<!--  게시글번호(articleId)로 전체 게시글 갯수 조회 -->
+	<select id="getCountAll" resultType="int" parameterType="int">
+		SELECT
+			COUNT(article_id)
+		FROM
+			article
+	</select>
+
+	<!-- 페이징 계산에 필요한 게시글 전체 개수 반환 -->
+	<select id="getCountAll2" resultType="int" parameterType="PageParams">
+		SELECT COUNT(article_id)
+		FROM   article
+		WHERE  
+    	<choose>
+        	<when test="type == 'writer' ">
+            	writer = #{input}
+        	</when>
+        	<when test="type == 'subject' ">
+            	subject LIKE '%' || #{input} || '%'
+        	</when>
+        	<when test="type == 'content' ">
+            	content LIKE '%' || #{input} || '%'
+        	</when>
+    	</choose>
+    	AND board_id = #{boardId}
+	</select>
+
+	<!-- 요청페이지 -->
+	<select id="findByAll" resultType="ArticleDTO" parameterType="PageParams">
+		SELECT article_id AS articleId,
+			   subject,
+			   writer AS writer,
+		       regdate, 
+       		   hitcount ,
+			   level_no AS levelNum
+		FROM   (SELECT  CEIL(rownum / 10) request_page, 
+						article_id ,
+               			subject, 
+               			writer, 
+               			TO_CHAR(regdate, 'YYYY-MM-DD HH24:MI') regdate, 
+               			hitcount ,
+               			level_no
+               			
+        		FROM   (SELECT
+        					    article_id, 
+        					    subject, 
+                           		writer, 
+                           		regdate, 
+                           		hitcount ,
+								level_no
+                    	FROM    article 
+                    	<!--  
+                    	WHERE   <choose>
+        							<when test="type == 'writer'">
+            							writer = #{input}
+        							</when>
+        							<when test="type == 'subject'">
+            							subject LIKE '%' || #{input} || '%'
+        							</when>
+        							<when test="type == 'content'">
+            							content LIKE '%' || #{input} || '%'
+        							</when>
+    							</choose>
+    							AND board_id = #{boardId} -->
+                   		ORDER  BY group_no DESC, order_no ASC)) 
+		WHERE  request_page = 1
+	</select>
+
+
+	<!-- 댓글쓰기 -->
+
+	<insert id="createArticle" parameterType="ArticleDTO">
+		INSERT INTO article
+                  (article_id,
+                   board_id,
+                   writer,
+                   subject,
+                   content,
+                   passwd,
+                   group_no,
+                   level_no,
+                   order_no)
+      VALUES      (article_id_seq.NEXTVAL,
+                   #{boardId},
+                   #{writer},
+                   #{subject},
+                   #{content},
+                   #{passwd},
+                   #{groupNum},
+                   #{levelNum} + 1,
+                   (SELECT MAX(order_no) + 1
+                    FROM   article
+                    WHERE  board_id = 10
+                           AND group_no = article_id))
+	</insert>
+
+	<!-- 대댓글 쓰기 -->
+	<insert id="createSubArticle">
+		INSERT INTO article
+		(article_id "articleId",
+		board_id "boardId",
+		writer,
+		subject,
+		content,
+		passwd,
+		group_no "groupNum",
+		level_no
+		"levelNum",
+		order_no "orderNum")
+		VALUES (
+			article_id_seq.NEXTVAL,
+			#{borderId},
+			#{writer},
+			#{subject},
+			#{content},
+			#{passwd},
+			#{groupNo},
+			#{lebelNo},
+			(SELECT order_no + 1
+			FROM article
+			WHERE article_id = #{articleId}));
+	</insert>
+
+
+	<!-- 게시글 상세보기 -->
+	<select id="viewArticleAll" parameterType="int">
+
+		 SELECT    article_id AS articleId,
+            	writer,
+            	subject,
+            	content,
+            	regdate
+      FROM   	article
+      WHERE     article_id = #{articleId}
+
+	</select>
+
+	<!-- 게시글 번호로 게시글 검색 -->
+	<select id="searchArticle" parameterType="int" resultType="ArticleDTO">
+		SELECT
+			article_id,
+			board_id,
+			writer,
+			subject,
+			content,
+			passwd,
+			group_no,
+			level_no,
+			order_no
+		FROM
+			article
+		WHERE
+			article_id = #{articleId}
+
+	</select>
+
+
+	<!-- 게시글 수정 -->
+	<update id="updateArticle" parameterType="ArticleDTO">
+
+		UPDATE 
+			article
+		SET
+			subject =#{subject} ,
+			content =#{content} ,
+			passwd =#{passwd}
+		WHERE
+			article_id = #{articleId}
+
+	</update>
+
+	<!-- 게시글 삭제 -->
+	<delete id="deleteArticle" parameterType="int" >
+		DELETE FROM article
+		WHERE article_id = #{articleId}
+	</delete>
+
+
+
+
+</mapper>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="kor">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>다중 게시판 실습용 웹 디자인</title>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/css/simple-sidebar.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Full Stack Developer </div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Favorites</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Toggle</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">홈 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">메뉴1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">메뉴2</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                게시판
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">자유게시판</a>
+                <a class="dropdown-item" href="#">만땅 자료실</a>
+                <a class="dropdown-item" href="#">공지사항</a>
+                <a class="dropdown-item" href="#">묻고 답하기</a>
+                <div class="dropdown-divider">묻고 답하기</div>
+                <a class="dropdown-item" href="#">토론방</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <h2 class="mt-4">자유게시판 목록
+          <span>
+            <a href="#" th:href="@{/article/register}">
+              <button type="button" class="btn btn-success">게시글 쓰기</button>
+            </a>
+          </span>
+        </h2>
+
+        <hr>
+
+        <form action="/article/list/search" method="get" id="searchForm">
+          <div class="input-group">
+            <input type="hidden" name="page" value="1">
+            <div class="input-group-prepend">
+              <select class="custom-select" name="type">
+                <option selected>----- 검색유형 -----</option>
+                <option>제목</option>
+                <option>내용</option>
+                <option>작성자</option>
+                <option>제목 + 내용</option>
+                <option>제목 + 내용 + 작성자</option>
+              </select>
+            </div>
+            <input type="search" class="form-control" name="value">
+            <div class="input-group-append" id="button-addon4">
+              <button class="btn btn-success btn-search" type="button">검색</button>
+            </div>
+          </div>
+        </form>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">번호</th>
+              <th scope="col">제목</th>
+              <th scope="col">레벨번호</th>
+              <th scope="col">작성자</th>
+              <th scope="col">조회수</th>
+              <th scope="col">등록일자</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+          <tr th:each="articleDTO : ${list}" th:onclick="|location.href='@{/article/read(articleId=${articleDTO.articleId})}'|"
+              style="cursor:pointer;"
+              th:class="${articleDTO.levelNum > 0} ? 'reply' : ''"
+          >
+
+            <th scope="row" th:text="${articleDTO.articleId}">일</th>
+            <td th:text="${articleDTO.subject}"> 첫번째 게시글입니다</td>
+            <td th:text="${articleDTO.levelNum}"></td>
+            <td th:text="${articleDTO.writer}">홍길동</td>
+            <td th:text="${articleDTO.content}">5</td>
+            <td th:text="${articleDTO.regdate}">날짜</td>
+
+          </tr>
+
+         
+        </table>
+
+        <ul class="pagination h-100 justify-content-center align-items-center">
+
+          <li class="page-item"><a class="page-link" th:href="@{/article/list(requestPage=1)}">처음으로</a></li>
+          <li class="page-item" th:if="${pagination.showPrevious}"><a class="page-link" th:href="@{/article/list(requestPage=${pagination.previousStartPage})}">이전목록</a></li>
+
+          <ul class="pagination h-100 justify-content-center align-items-center">
+            <li class="page-item" th:each="number : ${#numbers.sequence(pagination.startPage, pagination.endPage)}"
+                th:classappend="${number == requestPage} ? 'active' : ''">
+              <a class="page-link" th:href="@{/article/list(requestPage=${number})}" th:text="${number}"></a>
+            </li>
+          </ul>
+
+          <li class="page-item" th:if="${pagination.showNext}"><a class="page-link" th:href="@{/article/list(requestPage=${pagination.nextStartPage})}">다음목록</a></li>
+          <li class="page-item"><a class="page-link" th:href="@{/article/list(requestPage=${pagination.totalPages})}">끝으로</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function (e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+</body>
+</html>
