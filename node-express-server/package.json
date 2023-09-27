@@ -1,0 +1,18 @@
+{
+  "name": "express-server",
+  "version": "1.0.0",
+  "description": "jojangnim babo",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1" ,
+    "start": "nodemon main"
+  },
+  "author": "song woo sung",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

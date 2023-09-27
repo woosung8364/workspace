@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="ExternalProjectImportWizard">
-		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
-		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\ezen-fullstack\workspace\amsV4희영님"/>
-			<item value="C:\ezen-fullstack\workspace\Project_amsV4"/>
-			<item value="C:\ezen-fullstack\workspace\project_amsV2"/>
-			<item value="C:\ezen-fullstack\java_oopV2_teacher_lambda"/>
-			<item value="C:\ezen-fullstack\java_gui"/>
-			<item value="C:\ezen-fullstack\java_network"/>
-			<item value="C:\ezen-fullstack\project_chatV2"/>
-			<item value="C:\ezen-fullstack\project_chat"/>
-			<item value="C:\ezen-fullstack\project_chat_teacher"/>
-			<item value="C:\ezen-fullstack\java_io (2)"/>
-			<item value="C:\ezen-fullstack\java_io"/>
-		</list>
-		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
-			<item value=""/>
-		</list>
+	<section name="NewWizardAction">
 	</section>
 	<section name="SmartImportWizard">
 		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
@@ -29,39 +8,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-			<item value="C:\ezen-fullstack\workspace\spring_mvc_mybatis_thymeleaf_tutorial"/>
-			<item value="C:\ezen-fullstack\workspace\spring_mvc_mybatis_thymeleaf_tutorial (1)"/>
-			<item value="C:\ezen-fullstack\workspace\spring_mvc_mybatis_thymeleaf_board"/>
-			<item value="C:\ezen-fullstack\workspace\mybatis_basic"/>
-			<item value="C:\ezen-fullstack\workspace\spring_mvc"/>
-			<item value="C:\ezen-fullstack\workspace\java_io"/>
-			<item value="C:\ezen-fullstack\workspace\project_shoppingmall 지연님"/>
-			<item value="C:\ezen-fullstack\workspace\project_shoppingmall (3)"/>
-			<item value="C:\ezen-fullstack\workspace\project_shoppingmall"/>
-			<item value="C:\Users\i7C-\Desktop\project_shoppingmall"/>
-			<item value="C:\ezen-fullstack\workspace\project_shoppingmall_framework_ajax"/>
-			<item value="C:\ezen-fullstack\workspace\mvc_Ajax"/>
-			<item value="C:\ezen-fullstack\workspace\mvc_framework"/>
-			<item value="C:\ezen-fullstack\workspace\servlet_jsp_mvc"/>
-			<item value="C:\Users\i7C-\Desktop\project_portfolio 진행중"/>
-			<item value="C:\Users\i7C-\Desktop\project_portfolio_jsp"/>
-			<item value="C:\Users\i7C-\Desktop\project_portfolio내꺼_jsp"/>
-			<item value="C:\ezen-fullstack\workspace\jsp_basic(선생님)"/>
-			<item value="C:\ezen-fullstack\workspace\jsp_basic -2-"/>
-			<item value="C:\ezen-fullstack\workspace\java_jdbc"/>
-			<item value="C:\ezen-fullstack\workspace\jsp_basic"/>
-			<item value="C:\ezen-fullstack\workspace\project_sms_web"/>
-			<item value="C:\ezen-fullstack\workspace\servlet_advance0704"/>
-			<item value="C:\ezen-fullstack\workspace\servlet_advance"/>
-			<item value="C:\ezen-fullstack\workspace\servlet_basic"/>
-			<item value="C:\ezen-fullstack\workspace"/>
-			<item value="C:\ezen-fullstack\project_chat_teacher"/>
-		</list>
-	</section>
-	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard"/>
-		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.wst.web.ui"/>
+			<item value="D:\ezen-fullstack\workspace\java_basic"/>
 		</list>
 	</section>
 </section>

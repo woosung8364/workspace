@@ -2,7 +2,7 @@
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
     <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-        <listEntry value="/Project_amsV4/src/ezen/ams/app/AMS.java"/>
+        <listEntry value="/Java_oop/src/ezen/oop/ams/AMS.java"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="1"/>
@@ -11,8 +11,7 @@
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_SHOW_CODEDETAILS_IN_EXCEPTION_MESSAGES" value="true"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
-    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ezen.ams.app.AMS"/>
-    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="Project_amsV4"/>
-    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Project_amsV4"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dfile.encoding=MS949"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ezen.oop.ams.AMS"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="Java_oop"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Java_oop"/>
 </launchConfiguration>

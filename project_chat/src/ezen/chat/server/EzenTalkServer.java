@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class EzenTalkServer {
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
 		ChatServer chatServer = new ChatServer();
 		try {
 			chatServer.startup();

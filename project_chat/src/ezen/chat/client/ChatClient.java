@@ -7,27 +7,35 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.Collection;
 import java.util.Scanner;
 
+import ezen.chat.server.ChatHandler;
+import ezen.chat.server.ChatServer;
 import ezen.chat.protocol.MessageType;
 
 /**
- * 전화기 역할..
  * TCP/IP 기반의 ChatClient
  */
 public class ChatClient {
 	
-//	private static final String SERVER_IP = "localhost";
-	private static final String SERVER_IP = "192.168.20.57";
+	private static final String SERVER_IP = "localhost";
+//	private static final String SERVER_IP = "192.168.20.35";
+//	private static final String SERVER_IP = "192.168.20.38";
+//	private static final String SERVER_IP = "192.168.20.20";
 	private static final int SERVER_PORT = 7777;
 	
 	private Socket socket;
 	private DataInputStream in;
 	private DataOutputStream out;
-	ChatFrame chatFrame;
+	private ChatFrame chatFrame;
 	
 	public ChatClient(ChatFrame chatFrame) {
 		this.chatFrame = chatFrame;
+	}
+	
+	public void list () {
+		
 	}
 	
 	// 서버 연결
@@ -46,7 +54,7 @@ public class ChatClient {
 	
 	// 메시지 전송
 	public void sendMessage(String message) throws IOException {
-		out.writeUTF(message); // out 빨대로 출력
+		out.writeUTF(message);
 	}
 	
 	// 메시지 수신
@@ -60,29 +68,25 @@ public class ChatClient {
 						String[] tokens = serverMessage.split("\\|");
 						
 						MessageType messageType = MessageType.valueOf(tokens[0]);
-						String senderNickName = tokens[1]; // 메시지 보낸 사람의 닉네임임
 						
+						String senderNickName = tokens[1];
 						
 						// 클라이언트 전송 메시지 종류에 따른 처리
 						switch (messageType) {
 							case CONNECT:
-								chatFrame.appendMessage("@@@@@@@@@@ "+senderNickName+"님이 입장했습니다.@@@@@@@@@@");
+								chatFrame.appendMessage("@@@@ "+senderNickName+"님이 연결하였습니다 @@@@");
 								chatFrame.cleanName();
 								break;
 							case CHAT_MESSAGE:
-								String chatMessage = tokens[2];
-								chatFrame.appendMessage("["+senderNickName+"]"+chatMessage);
+								String chatMessge = tokens[2];
+								chatFrame.appendMessage("["+senderNickName+"] : " + chatMessge);
 								break;
 							case DIS_CONNECT:
-								chatFrame.appendMessage("########## "+senderNickName+"님이 퇴장했습니다.##########");
+								chatFrame.appendMessage("#### "+senderNickName+"님이 연결 해제하였습니다 ####");
 								chatFrame.cleanName();
 								break;
 							case NICK_NAME:
-								chatFrame.nameList(tokens[1]);
-								break;
-							case DM_MESSAGE:
-								String chatMessage1 = tokens[2];
-								chatFrame.appendMessage("["+senderNickName+"]"+chatMessage1);
+								chatFrame.nickNameList(tokens[1]);
 								break;
 						}
 					}
